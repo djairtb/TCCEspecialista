@@ -1,0 +1,25 @@
+{
+  "name": "tccapi",
+  "version": "1.0.0",
+  "description": "API que disponibiliza acesso dos clientes ao sistema especialista.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/djairtb/TCCEspecialista.git"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "keywords": [
+    "tcc",
+    "cafe",
+    "node",
+    "api"
+  ],
+  "author": "varios",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/djairtb/TCCEspecialista/issues"
+  },
+  "homepage": "https://github.com/djairtb/TCCEspecialista#readme"
+}
