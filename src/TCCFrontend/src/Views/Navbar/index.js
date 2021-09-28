@@ -1,6 +1,6 @@
 import React from "react";
-import logo from "./logo.png";
-import { StyledNavbar, Img, NavLink } from "./styles";
+import logo from "./folha1.png";
+import { StyledNavbar, Img, NavLink} from "./styles";
 
 function NavBar() {
   return (

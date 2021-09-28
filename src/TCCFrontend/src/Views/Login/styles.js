@@ -14,6 +14,11 @@ export const Form = styled.form`
   height: -webkit-fill-available;
   background-color: #e5e5e5;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+  @media (max-width: 800px) {
+  position: fixed;
+    
+  }
 `;
 
 export const FormTitle = styled.h1`
@@ -26,6 +31,10 @@ export const FormTitle = styled.h1`
 export const RegisterLink = styled(Link)`
   color: #444242;
   font-size: 1em !important;
+
+  @media (max-width: 800px) {
+    justify-content: center;
+  }
 `;
 
 export const Container = styled.div`
@@ -58,6 +67,9 @@ export const Line = styled.hr`
   width: 170px;
   margin-top: -20px;
 
+  @media (max-width: 800px) {
+    width: 150px;
+  }
 `;
 
 export const Subtitle = styled.p`

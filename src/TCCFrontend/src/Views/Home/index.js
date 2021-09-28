@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useEffect } from "react";
-import homeBg from "../../Images/home.jpg";
+import homeBg from "../../Images/home.png";
 import folhaBg from "../../Images/login-background.jpg";
 import Button from "../../Components/Button";
 import Card from "../../Components/Card";

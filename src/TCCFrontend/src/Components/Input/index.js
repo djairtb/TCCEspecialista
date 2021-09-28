@@ -11,6 +11,10 @@ const Input = styled.input`
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   border-radius: 0.5em;
   margin-top: 7px;
+
+  @media (max-width: 800px) {
+    width: 480%;
+  }
   `;
 
 export default memo(Input);

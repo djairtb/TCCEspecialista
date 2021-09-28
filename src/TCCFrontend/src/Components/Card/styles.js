@@ -3,8 +3,14 @@ import styled from "styled-components";
 export const CardContainer = styled.div`
   height: 25rem;
   width: 250px;
-  border: 1px solid #cec3c3;
+  border: 3px solid #cec3c3;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+  &:hover {
+    box-shadow: 20px 5px 10px rgba(0,0,0,0.5);
+    cursor: pointer;
+  }
 `;
+
 
 export const CardHeader = styled.div`
   height: 10rem;

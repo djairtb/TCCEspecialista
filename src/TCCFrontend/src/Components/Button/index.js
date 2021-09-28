@@ -11,7 +11,9 @@ const Button = styled.button`
   background-color: ${injectColor};
   width: ${injectWidth};
   border-radius: 0.4em;
-
+  &:hover {
+    cursor: pointer;
+  }
  
   
 `;

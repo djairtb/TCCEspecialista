@@ -11,6 +11,7 @@ export const StyledNavbar = styled.div`
 
 export const Img = styled.img`
   height: 3rem;
+  margin-left: 4em;
 `;
 
 export const NavLink = styled(Link)`
@@ -20,5 +21,5 @@ export const NavLink = styled(Link)`
   text-decoration: none;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
   "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  opacity: 0.7;
+  //opacity: 0.9;
 `;

@@ -61,7 +61,7 @@ export const Line = styled.hr`
   margin-top: -20px;
 
   @media(max-width: 800px) {
-    width: 140px;
+    width: 190px;
     position: relative;
     
   }
@@ -71,10 +71,10 @@ export const Line = styled.hr`
 export const Subtitle = styled.p`
   font-weight: bold;
   text-align: center;
-
+  margin-top: 1px;
 
  
-  @media(max-width: 1000px) {
+  @media(max-width: 800px) {
     text-align: start;
   }
 `
