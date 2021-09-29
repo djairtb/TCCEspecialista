@@ -8,12 +8,14 @@ function ContactUs(){
     return (  
       <Container>
         <Box>
-          <Title>Contate-nos</Title>
+          <Title>CONTATO</Title>
           <Contact>
-            <Phone><i class="fa fa-mobile fa-2x" aria-hidden="true"></i>&nbsp; Telefone: (xx) xxxxx-xxxx</Phone>
-            <Email><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp; E-mail:
+            <Phone><i class="fa fa-mobile fa-2x" aria-hidden="true"></i>&nbsp; Telefone: <br />
+            (xx)xxxxx-xxxx </Phone>
+            <Email><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp; E-mail: <br />
             aaaaaaaa@aaaaaa.com</Email>
-            <Address><i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>&nbsp; Endereço: Av Paulista nº xxx</Address>
+            <Address><i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>&nbsp; Endereço: <br />
+            Av Paulista nº xxx</Address>
           </Contact>
         </Box>
 

@@ -18,6 +18,7 @@ export const ImageContainer = styled.div`
 export const Line = styled.hr`
   width: 150px;
   margin-right: 90%;
+
 `;
 
 export const Title = styled.p`

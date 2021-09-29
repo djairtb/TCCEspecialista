@@ -88,16 +88,16 @@ export const ContainerMissao = styled.div`
 
 export const ContainerVisao = styled.div`
   background-color: rgb(228 174 174 / 70%);
-  width: 90%;
+  width: 95%;
   height: 80%;
   margin: 10px;
-  margin-left: 3em;
+  margin-left: 2em;
   overflow: auto;
   margin-top: -0em;
 `;
 export const ContainerValores = styled.div`
   background-color: #b3cca7;
-  width: 90%;
+  width: 95%;
   height: 80%;
   overflow: auto;
   margin-left: -1em;

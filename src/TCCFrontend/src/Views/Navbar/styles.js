@@ -7,11 +7,19 @@ export const StyledNavbar = styled.div`
   align-items: center;
   background-color: #b3cca7;
   padding: 1rem;
+
+  @media (max-width: 800px) {
+  
+  }
 `;
 
 export const Img = styled.img`
   height: 3rem;
   margin-left: 4em;
+
+  @media (max-width: 800px) {
+  margin-left: 1em;
+  }
 `;
 
 export const NavLink = styled(Link)`
