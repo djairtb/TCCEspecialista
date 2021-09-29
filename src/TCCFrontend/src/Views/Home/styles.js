@@ -36,3 +36,31 @@ export const Carroussel = styled.div`
   margin-top: 2rem;
   //aa
 `;
+
+export const BottomController = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 4rem;
+  align-items: center;
+`;
+
+export const CircleContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const IconClickable = styled.i`
+  cursor: pointer;
+`;
+
+const injectBackgroud = ({ isactive }) => (isactive ? "#FFFFFF" : "#A3A6A6");
+
+export const Circle = styled.div`
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background-color: ${injectBackgroud};
+  margin-left: 1rem;
+`;

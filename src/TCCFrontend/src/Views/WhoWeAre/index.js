@@ -1,6 +1,17 @@
-import React, { useState, useCallback } from "react";
+import React from "react";
 import Input from "../../Components/Input";
-import { Container, ContainerDiv1, ContainerDiv2, ContainerHistory, ContainerMissao, ContainerValores, TitleHistory, ContainerVisao, Title, Text} from "./styles";
+import {
+  Container,
+  ContainerDiv1,
+  ContainerDiv2,
+  ContainerHistory,
+  ContainerMissao,
+  ContainerValores,
+  TitleHistory,
+  ContainerVisao,
+  Title,
+  Text,
+} from "./styles";
 
 function WhoWeAre() {
   return (
