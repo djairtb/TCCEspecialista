@@ -1,8 +1,16 @@
 import React, { useState, useCallback } from "react";
 import styled from "styled-components";
 import Input from "../../Components/Input";
-import { Title, Subtitle, ImageContainer, DangerTitle, Line, Container, INITIAL_DATE, MOCK_DATA } from "./styles";
-
+import {
+  Title,
+  Subtitle,
+  ImageContainer,
+  DangerTitle,
+  Line,
+  Container,
+  INITIAL_DATE,
+  MOCK_DATA,
+} from "./styles";
 
 function Reports() {
   const [date, setDate] = useState(INITIAL_DATE);
@@ -15,7 +23,6 @@ function Reports() {
 
   return (
     <Container>
-  
       <Input
         type="date"
         value={date}
@@ -33,7 +40,7 @@ function Reports() {
       <Title>Resultado</Title>
       <Line />
       <DangerTitle>{resultTitle}</DangerTitle>
-      
+
       <Title>Tratamentos</Title>
       <Line />
       <Subtitle>{result}</Subtitle>

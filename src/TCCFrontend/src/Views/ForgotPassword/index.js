@@ -1,8 +1,16 @@
 import React, { useCallback, useRef } from "react";
 import Button from "../../Components/Button";
 import Input from "../../Components/Input";
-import { FormItem, RegisterLink, FormTitle, Line, Subtitle, Container, Opacity, Form } from "./styles";
-
+import {
+  FormItem,
+  RegisterLink,
+  FormTitle,
+  Line,
+  Subtitle,
+  Container,
+  Opacity,
+  Form,
+} from "./styles";
 
 function ForgotPass() {
   const inputEmailRef = useRef();
@@ -11,16 +19,19 @@ function ForgotPass() {
     e.preventDefault();
     console.log(inputEmailRef?.current.value);
   }, []);
-  
+
   return (
     <Container>
-      <Opacity  />
+      <Opacity />
       <Form>
         <FormTitle>ESQUECEU A SENHA?</FormTitle>
         <Line />
         <FormItem>
-        <Subtitle>Digite seu e-mail abaixo, um link será enviado para redefinição de senha. Siga as instruções.</Subtitle>
-       </FormItem>
+          <Subtitle>
+            Digite seu e-mail abaixo, um link será enviado para redefinição de
+            senha. Siga as instruções.
+          </Subtitle>
+        </FormItem>
 
         <FormItem>
           <Input
@@ -33,20 +44,17 @@ function ForgotPass() {
         </FormItem>
 
         <FormItem>
-          <Button width="261px" type="submit">Enviar Link</Button>
+          <Button width="261px" type="submit">
+            Enviar Link
+          </Button>
         </FormItem>
-      
+
         <FormItem>
           <RegisterLink to="/login">Logar novamente</RegisterLink>
-
-       
         </FormItem>
-
       </Form>
-
     </Container>
   );
 }
-
 
 export default ForgotPass;

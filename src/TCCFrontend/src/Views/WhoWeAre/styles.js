@@ -1,17 +1,17 @@
 import styled from "styled-components";
 
- export const Container = styled.div`
-display: flex;
-justify-content: flex-start;
-flex-wrap: wrap;
-background-color: white;
-font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-"Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-overflow: hidden;
-height: 45rem;
-padding: 2em;
-display: block;
-    `;
+export const Container = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  background-color: white;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  overflow: hidden;
+  height: 45rem;
+  padding: 2em;
+  display: block;
+`;
 
 export const ContainerDiv1 = styled.div`
   width: 100vw;
@@ -25,7 +25,7 @@ export const ContainerDiv1 = styled.div`
   overflow: hidden;
   display: block;
 
-  @media (max-width: 800px) {
+  @media (max-width: 300px) {
     flex-direction: column;
     position: relative;
     margin-top: 1em;
@@ -45,7 +45,7 @@ export const ContainerDiv2 = styled.div`
   overflow: hidden;
   display: block;
 
-  @media (max-width: 800px) {
+  @media (max-width: 300px) {
     flex-direction: column;
     position: relative;
     margin-top: 0em;
@@ -60,7 +60,7 @@ export const ContainerHistory = styled.div`
   overflow: auto;
   float: right;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 300px) {
     flex-direction: column;
     position: relative;
     margin-top: 0em;
@@ -79,7 +79,7 @@ export const ContainerMissao = styled.div`
   overflow: auto;
   margin-left: -1em;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 300px) {
     flex-direction: column;
     width: 13em;
     height: 20em;
@@ -93,7 +93,12 @@ export const ContainerVisao = styled.div`
   margin: 10px;
   margin-left: 2em;
   overflow: auto;
-  margin-top: -0em;
+  margin-top: 0em;
+
+  @media (max-width: 800px) {
+    margin-left: 0em;
+    widht: 100vw;
+  }
 `;
 export const ContainerValores = styled.div`
   background-color: #b3cca7;
@@ -101,6 +106,11 @@ export const ContainerValores = styled.div`
   height: 80%;
   overflow: auto;
   margin-left: -1em;
+
+  @media (max-width: 800px) {
+    margin-left: -1em;
+    width: 106%;
+  }
 `;
 export const Title = styled.p`
   color: white;

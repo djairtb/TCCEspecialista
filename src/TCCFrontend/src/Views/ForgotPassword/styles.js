@@ -19,9 +19,9 @@ export const FormTitle = styled.h1`
   color: ${injectColor};
   display: flex;
   justify-content: center;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
-  `;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+`;
 
 export const RegisterLink = styled(Link)`
   color: #444242;
@@ -38,7 +38,6 @@ export const FormItem = styled.div`
   margin-bottom: 1rem;
   display: flex;
   justify-content: center;
-
 `;
 
 export const Opacity = styled.div`
@@ -49,7 +48,7 @@ export const Opacity = styled.div`
   left: 0;
   right: 0;
   background-repeat: no-repeat;
-  
+
   background: url(${loginBackground});
   width: 100%;
   height: 100%;
@@ -60,12 +59,10 @@ export const Line = styled.hr`
   width: 380px;
   margin-top: -20px;
 
-  @media(max-width: 800px) {
+  @media (max-width: 800px) {
     width: 190px;
     position: relative;
-    
   }
-
 `;
 
 export const Subtitle = styled.p`
@@ -73,8 +70,7 @@ export const Subtitle = styled.p`
   text-align: center;
   margin-top: 1px;
 
- 
-  @media(max-width: 800px) {
+  @media (max-width: 800px) {
     text-align: start;
   }
-`
+`;
