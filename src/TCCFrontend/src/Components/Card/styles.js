@@ -12,7 +12,7 @@ export const CardContainer = styled.div`
   margin: 5px;
 
   @media (max-width: 600px) {
-    margin-top: em;
+    margin-top: 1em;
   }
 `;
 
@@ -26,6 +26,7 @@ export const CardHeader = styled.div`
   align-items: center;
   color: #ffffff;
   font-size: 30px;
+  filter: brightness(60%);
 `;
 
 export const CardBody = styled.div`
@@ -36,4 +37,7 @@ export const CardBody = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  text-align: justify;
+  color: #636363;
+  font-size: 13px;
 `;

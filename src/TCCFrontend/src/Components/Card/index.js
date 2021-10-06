@@ -1,8 +1,7 @@
 import React, { memo } from "react";
 import { CardContainer, CardHeader, CardBody } from "./styles";
-import Button from "../Button";
 
-function Card({ title, description, image }) {
+function Card({ title, description, image, children }) {
   return (
     <CardContainer>
       <CardHeader style={{ backgroundImage: `url(${image})` }}>
@@ -10,7 +9,7 @@ function Card({ title, description, image }) {
       </CardHeader>
       <CardBody>
         <p>{description}</p>
-        <Button>Saiba Mais</Button>
+        {children}
       </CardBody>
     </CardContainer>
   );

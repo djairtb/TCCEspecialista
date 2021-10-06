@@ -41,10 +41,10 @@ function Reports() {
       <Line />
       <DangerTitle>{resultTitle}</DangerTitle>
 
-      <Title>Tratamentos</Title>
+      <Title>Sintomas</Title>
       <Line />
       <Subtitle>{result}</Subtitle>
-      <Title>Solução</Title>
+      <Title>Tratamento</Title>
       <Line />
       <Subtitle>{solution}</Subtitle>
     </Container>

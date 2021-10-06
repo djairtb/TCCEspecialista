@@ -1,27 +1,38 @@
 import React, { useState, useCallback } from "react";
 //import styled from "styled-components";
 //import Input from "../../Components/Input";
-import { Container, Contact, Box, Title, Phone, Email, Address } from "../ContactUs/styles";
+import {
+  Container,
+  Contact,
+  Box,
+  Title,
+  Phone,
+  Email,
+  Address,
+} from "../ContactUs/styles";
 
-function ContactUs(){
-      
-    return (  
-      <Container>
-        <Box>
-          <Title>CONTATO</Title>
-          <Contact>
-            <Phone><i class="fa fa-mobile fa-2x" aria-hidden="true"></i>&nbsp; Telefone: <br />
-            (xx)xxxxx-xxxx </Phone>
-            <Email><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp; E-mail: <br />
-            aaaaaaaa@aaaaaa.com</Email>
-            <Address><i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>&nbsp; Endereço: <br />
-            Av Paulista nº xxx</Address>
-          </Contact>
-        </Box>
+function ContactUs() {
+  return (
+    <Container>
+      <Box>
+        <Title>CONTATE-NOS</Title>
+        <Contact>
+          <Phone>
+            <i class="fa fa-mobile fa-2x" aria-hidden="true"></i>&nbsp;
+            Telefone: (xx) xxxxx-xxxx
+          </Phone>
+          <Email>
+            <i class="fa fa-envelope" aria-hidden="true"></i>&nbsp; E-mail:
+            aaaaaaaa@aaaaaa.com
+          </Email>
+          <Address>
+            <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>&nbsp;
+            Endereço: Av Paulista nº xxx
+          </Address>
+        </Contact>
+      </Box>
+    </Container>
+  );
+}
 
-      </Container>
-      
-    );
-  }
-  
-  export default ContactUs;
+export default ContactUs;

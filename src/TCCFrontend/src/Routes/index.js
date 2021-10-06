@@ -5,24 +5,29 @@ import LoginForm from "../Views/Login";
 import Reports from "../Views/Reports";
 import AppRoutes from "./AppRoutes";
 import LoginRoute from "./LoginRoutes";
-import RegisterRoute from "./RegisterRoutes"
 import WhoWeAre from "../Views/WhoWeAre";
 import Home from "../Views/Home";
 import ContactUs from "../Views/ContactUs";
 import ForgotPass from "../Views/ForgotPassword";
 import RecoverPass from "../Views/RecoverPassword";
+import InfoFerrugem from "../Views/InfoFerrugem";
+import InfoCercosporiose from "../Views/InfoCercosporiose";
+import InfoMancha from "../Views/InfoMancha";
 
 export default function Routes() {
   return (
     <Switch>
       <LoginRoute path="/login" component={LoginForm} />
-      <RegisterRoute path="/register" component={RegisterForm} />
-      <RegisterRoute path="/forgotpass" component={ForgotPass} />
-      <RegisterRoute path="/recoverpass" component={RecoverPass} />
+      <LoginRoute path="/register" component={RegisterForm} />
+      <LoginRoute path="/forgotpass" component={ForgotPass} />
+      <LoginRoute path="/recoverpass" component={RecoverPass} />
       <AppRoutes path="/home" component={Home} />
       <AppRoutes path="/reports" component={Reports} />
       <AppRoutes path="/whoweare" component={WhoWeAre} />
       <AppRoutes path="/contactus" component={ContactUs} />
+      <AppRoutes path="/infoferrugem" component={InfoFerrugem} />
+      <AppRoutes path="/infocercosporiose" component={InfoCercosporiose} />
+      <AppRoutes path="/infomancha" component={InfoMancha} />
       <Route path="/">
         <LoginForm />
       </Route>

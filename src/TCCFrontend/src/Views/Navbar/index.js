@@ -1,8 +1,14 @@
 import React from "react";
 import logo from "./folha1.png";
-import { StyledNavbar, Img, NavLink} from "./styles";
+import { StyledNavbar, Img, NavLink } from "./styles";
+import MobileView from "./MobileView";
+import { isMobile } from "react-device-detect";
 
 function NavBar() {
+  if (isMobile) {
+    return <MobileView />;
+  }
+
   return (
     <StyledNavbar>
       <Img src={logo} alt="" />
@@ -11,19 +17,23 @@ function NavBar() {
           <span>
             <i className="fa fa-home" aria-hidden="true"></i>
           </span>
-           Home |&nbsp;
+          Home |&nbsp;
         </NavLink>
         <NavLink to="/reports">
-          <i className="fa fa-pie-chart" aria-hidden="true"></i> Relatório |&nbsp;
+          <i className="fa fa-pie-chart" aria-hidden="true"></i> Relatório
+          |&nbsp;
         </NavLink>
         <NavLink to="/whoweare">
-          <i class="fa fa-question-circle" aria-hidden="true"></i> Quem somos |&nbsp;
+          <i class="fa fa-question-circle" aria-hidden="true"></i> Quem somos
+          |&nbsp;
         </NavLink>
         <NavLink to="/contactus">
           <i class="fa fa-phone" aria-hidden="true"></i> Contato
         </NavLink>
       </div>
-      <NavLink to="/login"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</NavLink>
+      <NavLink to="/login">
+        <i class="fa fa-sign-out" aria-hidden="true"></i> Logout
+      </NavLink>
     </StyledNavbar>
   );
 }

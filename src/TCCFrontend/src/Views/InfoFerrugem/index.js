@@ -1,25 +1,36 @@
 import React, { useState, useCallback, useEffect } from "react";
+import image1 from "../../Images/ferrugem1.jpg";
+import image2 from "../../Images/ferrugem2.jpg";
+import image3 from "../../Images/ferrugem3.jpg";
+import image4 from "../../Images/ferrugem4.jpg";
+import image5 from "../../Images/ferrugem5.jpg";
+import image6 from "../../Images/ferrugem6.jpg";
+import image7 from "../../Images/ferrugem7.jpg";
 
-import Button from "../../Components/Button";
-import Card from "../../Components/Card";
 import {
+  Title,
+  Subtitle,
+  DangerTitle,
+  Line,
   Container,
-  Header,
-  HeaderItem,
-  Carroussel,
   BottomController,
-  Circle,
   CircleContainer,
+  Circle,
   IconClickable,
-  Link,
-  ItemMancha,
-  ItemFerrugem,
-  ItemCercos,
-  Imagems,
+  HeaderItem,
+  Header,
+  TitleInf,
   FIVE_SECONDS,
+  INFOS,
 } from "./styles";
 
-function Home() {
+function InfoFerrugem() {
+  const FIVE_SECONDS = 5000;
+
+  const Imagems = [image1, image2, image3, image4, image5, image6, image7];
+
+  const { InfoDiasese, InformSymp, InfoTreatm } = INFOS;
+
   const [index, setIndex] = useState(0);
 
   const updateImage = useCallback(() => {
@@ -46,9 +57,12 @@ function Home() {
 
   return (
     <Container>
+      <Title>Ferrugem do Cafeeiro</Title>
+      <Line />
+      <TitleInf>Informações</TitleInf>
+
       <Header style={{ backgroundImage: `url(${Imagems[index]})` }}>
         <HeaderItem>
-          <p style={{ fontSize: "30px" }}>Coffee Diseases Recognition</p>
           <BottomController>
             <IconClickable
               className="fa fa-chevron-left fa-lg"
@@ -68,26 +82,20 @@ function Home() {
           </BottomController>
         </HeaderItem>
       </Header>
-      <Carroussel>
-        <Card {...ItemFerrugem}>
-          <Button>
-            <Link to="infoferrugem">Saiba mais </Link>
-          </Button>
-        </Card>
 
-        <Card {...ItemCercos}>
-          <Button>
-            <Link to="infocercosporiose">Saiba mais </Link>
-          </Button>
-        </Card>
-        <Card {...ItemMancha}>
-          <Button>
-            <Link to="infomancha">Saiba mais </Link>
-          </Button>
-        </Card>
-      </Carroussel>
+      <DangerTitle></DangerTitle>
+
+      <DangerTitle>{InfoDiasese}</DangerTitle>
+      <Line />
+      <TitleInf>Sintomas</TitleInf>
+
+      <Subtitle>{InformSymp}</Subtitle>
+      <Line />
+      <Title>Tratamento</Title>
+
+      <Subtitle>{InfoTreatm}</Subtitle>
     </Container>
   );
 }
 
-export default Home;
+export default InfoFerrugem;
