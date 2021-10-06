@@ -4,6 +4,7 @@ const app = express();
 //Rotas
 const index = require('./routes/index');
 const personRoute = require('./routes/personRoute');
+const resultadosRoute = require('./routes/resultadoRoute');
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
