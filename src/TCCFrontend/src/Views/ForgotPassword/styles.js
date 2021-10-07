@@ -103,7 +103,14 @@ export const Subtitle = styled.p`
   text-align: center;
   margin-top: 1px;
 
-  @media (max-width: 800px) {
+  @media (max-width: 1900px) {
     text-align: start;
+    margin-bottom: -1em;
+  }
+
+  @media (max-width: 400px) {
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: -1em;
   }
 `;
