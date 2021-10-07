@@ -12,6 +12,10 @@ export const Form = styled.form`
   right: 0;
   height: -webkit-fill-available;
   background-color: #e5e5e5;
+
+  @media (max-width: 300px) {
+    width: 50%;
+  }
 `;
 
 export const FormTitle = styled.h1`
@@ -19,17 +23,22 @@ export const FormTitle = styled.h1`
   color: ${injectColor};
   display: flex;
   justify-content: center;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 
-  @media(max-width: 800px) {
+  @media (max-width: 900px) {
     text-align: center;
-    
   }
-  `;
+`;
 
 export const RegisterLink = styled(Link)`
   color: #444242;
-  font-size: 1em !important;
+  font-size: 1em;
+
+  @media (max-width: 900px) {
+    font-size: 1.3em;
+    text-align: center;
+  }
 `;
 
 export const Container = styled.div`
@@ -43,6 +52,10 @@ export const FormItem = styled.div`
   display: flex;
   justify-content: center;
 
+  @media (max-width: 1400px) {
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 `;
 
 export const Opacity = styled.div`
@@ -53,21 +66,29 @@ export const Opacity = styled.div`
   left: 0;
   right: 0;
   background-repeat: no-repeat;
-  
+
   background: url(${loginBackground});
   width: 100%;
   height: 100%;
   filter: brightness(60%);
+
+  @media (max-width: 2500px) {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+  }
 `;
 
 export const Line = styled.hr`
   width: 270px;
   margin-top: -20px;
 
-  @media(max-width: 800px) {
+  @media (max-width: 900px) {
     width: 170px;
     position: relative;
-    
   }
 
+  @media (max-width: 500px) {
+    width: 100px;
+  }
 `;

@@ -50,7 +50,7 @@ export const Header = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   color: #ffffff;
-  filter: brightness(60%);
+  filter: brightness(80%);
 `;
 
 export const Carroussel = styled.div`
@@ -60,6 +60,7 @@ export const Carroussel = styled.div`
   justify-content: space-around;
   margin-top: 2rem;
   flex-wrap wrap;
+  
   //aa
 `;
 

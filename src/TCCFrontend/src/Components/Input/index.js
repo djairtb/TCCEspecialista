@@ -8,13 +8,14 @@ const Input = styled.input`
   height: 35px;
   font-size: 1em;
   background-color: #dcdcdc;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   border-radius: 0.5em;
   margin-top: 7px;
 
-  @media (max-width: 800px) {
-    width: 480%;
+  @media (max-width: 500px) {
+    width: 8em;
   }
-  `;
+`;
 
 export default memo(Input);

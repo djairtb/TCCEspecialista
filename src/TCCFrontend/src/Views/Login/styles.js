@@ -13,11 +13,11 @@ export const Form = styled.form`
   top: 0;
   height: -webkit-fill-available;
   background-color: #e5e5e5;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 
   @media (max-width: 800px) {
-  position: fixed;
-    
+    position: fixed;
   }
 `;
 
@@ -25,15 +25,17 @@ export const FormTitle = styled.h1`
   display: flex;
   justify-content: center;
   color: ${injectColor};
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 `;
 
 export const RegisterLink = styled(Link)`
   color: #444242;
-  font-size: 1em !important;
+  font-size: 1em;
 
   @media (max-width: 800px) {
-    justify-content: center;
+    font-size: 0.8em;
+    text-align: center;
   }
 `;
 
@@ -56,11 +58,16 @@ export const Opacity = styled.div`
   left: 0;
   right: 0;
   background-repeat: no-repeat;
-  
+
   background: url(${loginBackground});
   width: 100%;
   height: 100%;
   filter: brightness(60%);
+
+  @media (max-width: 2500px) {
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 `;
 
 export const Line = styled.hr`
@@ -68,7 +75,7 @@ export const Line = styled.hr`
   margin-top: -20px;
 
   @media (max-width: 800px) {
-    width: 150px;
+    width: 100px;
   }
 `;
 
@@ -76,5 +83,5 @@ export const Subtitle = styled.p`
   margin-top: -1px;
   margin-left: 0.5em;
   margin-right: 0.5em;
-  color:  #649760;
+  color: #649760;
 `;
