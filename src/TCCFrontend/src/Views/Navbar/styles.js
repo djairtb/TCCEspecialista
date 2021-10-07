@@ -5,8 +5,9 @@ export const StyledNavbar = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #b3cca7;
+  background-color: #000000de;
   padding: 1rem;
+  filter: brightness(80%);
 
   @media (max-width: 800px) {
   }
