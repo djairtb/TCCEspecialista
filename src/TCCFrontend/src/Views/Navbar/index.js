@@ -14,9 +14,7 @@ function NavBar() {
       <Img src={logo} alt="" />
       <div>
         <NavLink to="/home">
-          <span>
-            <i className="fa fa-home" aria-hidden="true"></i>
-          </span>
+          <i className="fa fa-home" aria-hidden="true"></i>
           &nbsp; Home &nbsp;|&nbsp; &nbsp;
         </NavLink>
         <NavLink to="/reports">

@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback, useEffect, useRef } from "react";
 
 import Button from "../../Components/Button";
 import Card from "../../Components/Card";
@@ -22,25 +22,30 @@ import {
 function Home() {
   const [index, setIndex] = useState(0);
 
+  const intervalRef = useRef();
+
   const updateImage = useCallback(() => {
     setIndex((index + 1) % Imagems.length);
   }, [index]);
 
   useEffect(() => {
-    let intervalId;
-    intervalId = setInterval(updateImage, FIVE_SECONDS);
-    return () => clearInterval(intervalId);
+    intervalRef.current = setInterval(updateImage, FIVE_SECONDS);
+    return () => clearInterval(intervalRef.current);
   }, []);
 
   const onLeftClick = useCallback(() => {
+    clearInterval(intervalRef.current);
     if (index !== 0) {
       setIndex(index - 1);
     }
   }, [index]);
 
   const onRightClick = useCallback(() => {
-    if (index !== Imagems.length - 1) {
+    clearInterval(intervalRef.current);
+    if (index < Imagems.length - 1) {
       setIndex(index + 1);
+    } else if (index === Imagems.length - 1) {
+      setIndex(0);
     }
   }, [index]);
 
