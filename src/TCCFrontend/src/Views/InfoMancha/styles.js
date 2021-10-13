@@ -39,8 +39,7 @@ export const Header = styled.div`
   float: right;
   margin-left: 20%;
   border: 3px solid #cec3c3;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-  border-radius: 1em;
+
   &:hover {
     box-shadow: 20px 5px 10px rgba(0.1, 0.1, 0.1, 0.1);
     cursor: pointer;

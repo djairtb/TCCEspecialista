@@ -13,6 +13,7 @@ import RecoverPass from "../Views/RecoverPassword";
 import InfoFerrugem from "../Views/InfoFerrugem";
 import InfoCercosporiose from "../Views/InfoCercosporiose";
 import InfoMancha from "../Views/InfoMancha";
+import AboutUs from "../Views/AboutUs";
 
 export default function Routes() {
   return (
@@ -28,6 +29,7 @@ export default function Routes() {
       <AppRoutes path="/infoferrugem" component={InfoFerrugem} />
       <AppRoutes path="/infocercosporiose" component={InfoCercosporiose} />
       <AppRoutes path="/infomancha" component={InfoMancha} />
+      <AppRoutes path="/aboutus" component={AboutUs} />
       <Route path="/">
         <LoginForm />
       </Route>

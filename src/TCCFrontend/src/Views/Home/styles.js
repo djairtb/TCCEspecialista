@@ -50,17 +50,16 @@ export const Header = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   color: #ffffff;
-  filter: brightness(60%);
+  filter: brightness(80%);
 `;
 
 export const Carroussel = styled.div`
-  height: 20rem;
-  width: 100%;
+width: 90%;
+margin: auto;
   display: flex;
   justify-content: space-around;
   margin-top: 2rem;
   flex-wrap wrap;
-  //aa
 `;
 
 export const BottomController = styled.div`

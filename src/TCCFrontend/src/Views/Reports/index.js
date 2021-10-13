@@ -1,5 +1,4 @@
 import React, { useState, useCallback } from "react";
-import styled from "styled-components";
 import Input from "../../Components/Input";
 import {
   Title,
@@ -10,6 +9,7 @@ import {
   Container,
   INITIAL_DATE,
   MOCK_DATA,
+  FileImg,
 } from "./styles";
 
 function Reports() {
@@ -34,7 +34,7 @@ function Reports() {
       <Line />
       <ImageContainer>
         {imagens.map((image) => (
-          <img src={image} alt="image" key={image} />
+          <FileImg src={image} alt="image" key={image} />
         ))}
       </ImageContainer>
       <Title>Resultado</Title>

@@ -14,21 +14,19 @@ function NavBar() {
       <Img src={logo} alt="" />
       <div>
         <NavLink to="/home">
-          <span>
-            <i className="fa fa-home" aria-hidden="true"></i>
-          </span>
-          Home |&nbsp;
+          <i className="fa fa-home" aria-hidden="true"></i>
+          &nbsp; Home &nbsp;|&nbsp; &nbsp;
         </NavLink>
         <NavLink to="/reports">
-          <i className="fa fa-pie-chart" aria-hidden="true"></i> Relatório
-          |&nbsp;
+          <i className="fa fa-pie-chart" aria-hidden="true"></i> &nbsp;
+          Relatório &nbsp; | &nbsp;
         </NavLink>
         <NavLink to="/whoweare">
-          <i class="fa fa-question-circle" aria-hidden="true"></i> Quem somos
-          |&nbsp;
+          <i class="fa fa-question-circle" aria-hidden="true"></i> &nbsp; Quem
+          somos &nbsp; | &nbsp;
         </NavLink>
         <NavLink to="/contactus">
-          <i class="fa fa-phone" aria-hidden="true"></i> Contato
+          <i class="fa fa-phone" aria-hidden="true"></i> &nbsp; Contato&nbsp;
         </NavLink>
       </div>
       <NavLink to="/login">

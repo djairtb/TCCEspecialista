@@ -12,6 +12,15 @@ export const Form = styled.form`
   right: 0;
   height: -webkit-fill-available;
   background-color: #e5e5e5;
+
+  @media (max-width: 1200px) {
+    position: fixed;
+  }
+
+  @media (max-width: 330px) {
+    position: fixed;
+    height: 90%;
+  }
 `;
 
 export const FormTitle = styled.h1`
@@ -21,11 +30,25 @@ export const FormTitle = styled.h1`
   justify-content: center;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+
+  @media (max-width: 1300px) {
+    text-align: center;
+  }
+
+  @media (max-width: 300px) {
+    text-align: center;
+    font-size: 24px;
+  }
 `;
 
 export const RegisterLink = styled(Link)`
   color: #444242;
   font-size: 1em !important;
+
+  @media (max-width: 900px) {
+    font-size: 1.3em;
+    text-align: center;
+  }
 `;
 
 export const Container = styled.div`
@@ -38,6 +61,11 @@ export const FormItem = styled.div`
   margin-bottom: 1rem;
   display: flex;
   justify-content: center;
+
+  @media (max-width: 2500px) {
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 `;
 
 export const Opacity = styled.div`
@@ -53,15 +81,20 @@ export const Opacity = styled.div`
   width: 100%;
   height: 100%;
   filter: brightness(60%);
+
+  @media (max-width: 2500px) {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+  }
 `;
 
 export const Line = styled.hr`
   width: 380px;
   margin-top: -20px;
 
-  @media (max-width: 800px) {
-    width: 190px;
-    position: relative;
+  @media (max-width: 1100px) {
+    width: 100px;
   }
 `;
 
@@ -70,7 +103,14 @@ export const Subtitle = styled.p`
   text-align: center;
   margin-top: 1px;
 
-  @media (max-width: 800px) {
+  @media (max-width: 1900px) {
     text-align: start;
+    margin-bottom: -1em;
+  }
+
+  @media (max-width: 400px) {
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: -1em;
   }
 `;
