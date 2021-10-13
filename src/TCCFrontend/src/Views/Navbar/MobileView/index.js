@@ -15,7 +15,7 @@ export default function MobileView() {
         <NavLink to="/reports">
           <i className="fa fa-pie-chart fa-lg" aria-hidden="true"></i>
         </NavLink>
-        <NavLink to="/whoweare">
+        <NavLink to="/aboutus">
           <i class="fa fa-question-circle fa-lg" aria-hidden="true"></i>
         </NavLink>
         <NavLink to="/contactus">

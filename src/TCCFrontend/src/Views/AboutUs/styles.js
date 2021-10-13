@@ -47,7 +47,7 @@ export const ContainerVision = styled.div`
     margin-top: 28em;
   }
 
-  @media (min-width: 600px) and (max-width: 1400px) {
+  @media (min-width: 600px) and (max-width: 400px) {
     height: 30%;
     margin-top: 40em;
   }
@@ -66,13 +66,19 @@ export const ContainerValues = styled.div`
 `;
 
 export const ContainerWhoAreUs = styled.div`
-  height: 35%;
+  width: 100%;
+  height: 10%;
   background-color: #cfbcc2;
   display: block;
-  overflow: auto;
+  margin-top: 2em;
 
-  @media (min-width: 250px) and (max-width: 1000px) {
-    height: 50%;
+  @media (min-width: 1300px) and (max-width: 1700px) {
+    height: 42%;
+    margin-top: -3em;
+  }
+
+  @media (min-width: 200px) and (max-width: 1299px) {
+    height: 220%;
   }
 `;
 
@@ -103,11 +109,54 @@ export const Title = styled.p`
 
 export const ContainerImages = styled.div`
   width: 100%;
-  height: 30%;
+  height: 45%;
+  display: flex;
+  padding: 1em;
 
-  padding: 3em;
+  justify-content: space-around;
+  flex-wrap wrap;
+  flex-direction: inherit;
+  margin-left: -2em;
+
+
+  @media (max-width: 800px) {
+    height: 80%;
+    justify-content: space-around;
+    flex-wrap wrap;
+    margin-left: -3em;
+    flex-direction: column;
+    margin-bottom: 2em;
+    align-content: center;
+  }
+
+  @media (min-width: 800px) and (max-width: 2200px) {
+    height: 80%;
+    justify-content: space-around;
+    flex-wrap wrap;
+    margin-left: -3em;
+    flex-direction: column;
+    margin-top: -5em;
+    align-content: center;
+  }
+
+
+
+    
 `;
 
 export const imagems = styled.img`
   width: 50%;
+`;
+
+export const FileImg = styled.img`
+  //width: 20%;
+  //height: 100%;
+  width: 150px;
+  height: 150px;
+
+  @media (max-width: 1100px) {
+    width: 310px;
+    margin-bottom: 1em;
+    padding: 1em;
+  }
 `;

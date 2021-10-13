@@ -1,7 +1,10 @@
 import React from "react";
 import aboutus_capa from "../../Images/aboutus_capa.png";
-import image from "../../Images/ludi.jpeg";
 import { Header } from "../InfoFerrugem/styles";
+import foto_home_capa from "../../Images/foto_home_capa.jpg";
+import foto1_home_capa from "../../Images/foto1_home_capa.jpg";
+import foto2_home_capa from "../../Images/foto2_home_capa.jpg";
+import Member from "../../Components/Member";
 
 import {
   Container,
@@ -15,12 +18,51 @@ import {
   Text,
   Title,
   ContainerImages,
-  MOCK_IMAGE,
-  imagems,
+  FileImg,
 } from "./styles";
 
 function AboutUs() {
-  const imagems = [image];
+  const memberItem1 = {
+    image: foto_home_capa,
+    membersname: "André Dames",
+    occupation: "Analista de",
+  };
+
+  const memberItem2 = {
+    image: foto_home_capa,
+    membersname: "Bárbara Nunes",
+    occupation: "Dev Back-End",
+  };
+
+  const memberItem3 = {
+    image: foto_home_capa,
+    membersname: "Djair Barral",
+    occupation: "Dev Back-End",
+  };
+
+  const memberItem4 = {
+    image: foto_home_capa,
+    membersname: "Geovana Martins",
+    occupation: "ocupacao",
+  };
+
+  const memberItem5 = {
+    image: foto_home_capa,
+    membersname: "Juliana Carvalho",
+    occupation: "ocupacao",
+  };
+
+  const memberItem6 = {
+    image: foto_home_capa,
+    membersname: "Ludimila Araújo",
+    occupation: "Dev Front-End",
+  };
+
+  const memberItem7 = {
+    image: foto_home_capa,
+    membersname: "Nathalia Santos",
+    occupation: "Dev Front-End",
+  };
 
   return (
     <Container>
@@ -87,9 +129,15 @@ function AboutUs() {
           including versions of Lorem Ipsum. AKODKOA
         </Text>
 
-        <ContainerImages
-          style={{ backgroundImage: `url(${imagems[7]})` }}
-        ></ContainerImages>
+        <ContainerImages>
+          <Member {...memberItem1}></Member>
+          <Member {...memberItem2}></Member>
+          <Member {...memberItem3}></Member>
+          <Member {...memberItem4}></Member>
+          <Member {...memberItem5}></Member>
+          <Member {...memberItem6}></Member>
+          <Member {...memberItem7}></Member>
+        </ContainerImages>
       </ContainerWhoAreUs>
     </Container>
   );

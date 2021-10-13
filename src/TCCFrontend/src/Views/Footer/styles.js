@@ -60,6 +60,5 @@ export const Icons = styled.div`
   @media (max-width: 800px) {
     width: 20%;
     margin-bottom: 1em;
-    margin-left: 1em;
   }
 `;
