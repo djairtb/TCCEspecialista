@@ -1,4 +1,4 @@
-exports.getById = (req, res, next) => {
+exports.getUserResults = (req, res, next) => {
     let id = req.params.id;
     res.status(201).send(`Requisição recebida com sucesso! ${id}`);
 };
