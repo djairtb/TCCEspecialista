@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }))
 const originFrontEnd = process.env.ORIGIN_FRONTEND || "http://localhost:3000";
 app.use(
   cors({
-    origin: "http://localhost:3000", //Caminho do react para permitir
+    origin: originFrontEnd, //Caminho do react para permitir
     credentials: true,
   })
 );
