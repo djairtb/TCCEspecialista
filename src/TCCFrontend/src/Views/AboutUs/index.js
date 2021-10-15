@@ -22,6 +22,17 @@ import {
 } from "./styles";
 
 function AboutUs() {
+  const INFOS = {
+    missao:
+      "Oferecer uma tecnologia inovadora e de alta eficiência para o monitoramento e identificação de doeças no cafeeiro, gerando valor ao cliente, diminuindo o impacto ambiental e buscando excelência.",
+    visao:
+      "Ser refêrencia atraves da nossa tecnologia e boa performance para que as ONG´S auxiliem os agricultores no combate a doenças que possam aparecer nas folhas do café.",
+    quemSomos:
+      "Somos uma equipe focada em entregar a melhor experiência para o usuário final. Queremos ajudar as ONG´s e os pequenos agricultores a monitorararem suas plantações. Este é um projeto iniciado no ano de 2021 para um Trabalho de conclusão de curso(TCC), mas que se transformará em algo muito maior, pois nos empenhamos diariamente para que um dia possamos fazer diferença no mundo.",
+  };
+
+  const { missao, visao, quemSomos } = INFOS;
+
   const memberItem1 = {
     image: foto_home_capa,
     membersname: "André Dames",
@@ -49,7 +60,7 @@ function AboutUs() {
   const memberItem5 = {
     image: foto_home_capa,
     membersname: "Juliana Carvalho",
-    occupation: "ocupacao",
+    occupation: "Serviços de Hardware",
   };
 
   const memberItem6 = {
@@ -72,62 +83,29 @@ function AboutUs() {
       <ContainerMision>
         <Title>Missão</Title>
         <Line />
-        <Text>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum.
-        </Text>
+        <Text>{missao}</Text>
       </ContainerMision>
       <ContainerVision>
         <Title>Visão</Title>
         <Line />
-        <Text>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum.
-        </Text>
+        <Text>{visao}</Text>
       </ContainerVision>
       <ContainerValues>
         <Title>Valores</Title>
         <Line />
         <Text>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum.
+          • Evoluir na ética dentro da organização, respeitando os direitos do
+          ser humano e do meio ambiente. <br />
+          • Dedicação ao trabalho. <br />• Crença no negócio como fator
+          essencial para empreender e crescer. <br />
+          • Humildade, honestidade e respeito sempre com os usuários da nossa
+          plataforma. <br />
         </Text>
       </ContainerValues>
       <ContainerWhoAreUs>
         <Title>Quem somos</Title>
         <Line />
-        <Text>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum. AKODKOA
-        </Text>
+        <Text>{quemSomos}</Text>
 
         <ContainerImages>
           <Member {...memberItem1}></Member>

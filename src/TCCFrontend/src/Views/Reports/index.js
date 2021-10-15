@@ -11,8 +11,6 @@ import {
   DangerTitle,
   Line,
   Container,
-  INITIAL_DATE,
-  MOCK_DATA,
   FileImg,
 } from "./styles";
 
