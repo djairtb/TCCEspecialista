@@ -34,7 +34,6 @@ function Home() {
   const Imagems = [
     homeBg,
     folhaBg,
-    foto_home_capa,
     foto1_home_capa,
     foto2_home_capa,
     foto4_home_capa,
@@ -42,25 +41,23 @@ function Home() {
 
   const ItemFerrugem = {
     title: "Ferrugem",
-    description: `A ferrugem é a doença sobre a qual foi mais desenvolvido pesquisa devido
-    sua importância. No cafeeiro, ela é causada pela ação do fungo Hemileia vastatrix, que é um
-    parasita foliar obrigatório do café. Ela ocorre em todas as regiões produtoras de café no Brasil
-    e na América Central.`,
+    description: `A ferrugem causada pelo fungo é uma das mais sérias doenças que afetam a cultura do cafeeiro” (IBC, 1981), pois representa um enorme problema para os produtores, já que causa a perda de grande parte das folhas, reduzindo a taxa fotossintética e a produtividade. `,
     image: ferrugem_capa,
   };
 
   const ItemCercos = {
     title: "Cercosporiose",
-    description: `Causada pelo fungo Cercospora coffeicola, uma das principais e mais antigas doenças conhecidas do cafeeiro. Pode ocorrer tanto no viveiro quanto no campo.
-  
-    No viveiro de mudas, a doença é favorecida por regas diárias, por excesso de adubação com K e por falta de Ca.
+    description: `Cercosporiose é causada por um fungo necrotrófico chamado Cercospora coffeicola BerK. & Cooke, ele age invadindo todas as células, matando-as e nutrindo-se delas. 
+    Este fungo pode infectar desde mudas (ainda no viveiro) ou grandes lavouras.
     `,
     image: cercospora_capa,
   };
 
   const ItemMancha = {
     title: "Mancha Aureolada",
-    description: `A mancha aureolada é uma doença bacteriana que ataca folhas, rosetas, frutos novos e ramos do cafeeiro, atingindo mudas no viveiro e plantas no campo, ocorrendo principalmente nas regiões mais frias do Estados do Paraná, São Paulo e Sul de minas e em regiões altas e desprotegidas de ventos. `,
+    description: `Também conhecida por crestamento bacteriano do cafeeiro, essa doença vem ganhando notoriedade na cafeicultura brasileira nos últimos tempos. A bactéria causadora é a Pseudomonas syringae pv. Garcae.
+    A primeira vez que foi vista foi em São Paulo em 1955.
+     `,
     image: mancha_capa,
   };
   const [index, setIndex] = useState(0);

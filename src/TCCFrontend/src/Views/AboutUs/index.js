@@ -25,7 +25,7 @@ function AboutUs() {
   const memberItem1 = {
     image: foto_home_capa,
     membersname: "André Dames",
-    occupation: "Analista de",
+    occupation: "Analista e Design",
   };
 
   const memberItem2 = {
@@ -43,7 +43,7 @@ function AboutUs() {
   const memberItem4 = {
     image: foto_home_capa,
     membersname: "Geovana Martins",
-    occupation: "ocupacao",
+    occupation: "Serviços em nuvem",
   };
 
   const memberItem5 = {

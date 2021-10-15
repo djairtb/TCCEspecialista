@@ -27,7 +27,7 @@ export const CardHeader = styled.div`
   align-items: center;
   color: #ffffff;
   font-size: 30px;
-  filter: brightness(80%);
+  filter: brightness(50%);
 `;
 
 export const CardBody = styled.div`

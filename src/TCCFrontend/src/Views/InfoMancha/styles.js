@@ -7,6 +7,7 @@ export const Container = styled.div`
   flex-wrap: wrap;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: #636363;
 `;
 
 export const ImageContainer = styled.div`
@@ -88,6 +89,9 @@ export const TitleInf = styled.p`
   margin-bottom: 10px;
   margin-top: 25px;
   font-size: 20px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: black;
 `;
 
 export const Subtitle = styled.p`
@@ -100,6 +104,9 @@ export const Subtitle = styled.p`
   color: #636363;
   font-size: 18px;
   text-align: justify;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: #636363;
 `;
 
 export const Title = styled.p`
@@ -110,6 +117,9 @@ export const Title = styled.p`
   margin-bottom: 10px;
   margin-top: 25px;
   font-size: 23px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: black;
 `;
 
 export const DangerTitle = styled.p`
@@ -141,14 +151,3 @@ export const BottomController = styled.div`
   margin-top: 16rem;
   align-items: center;
 `;
-
-export const FIVE_SECONDS = 5000;
-
-export const INFOS = {
-  InfoDiasese:
-    "A Mancha aureolada é uma doença causada pelo ataque da bactéria Pseudomonas seryngae pv garcae, que causa sintomas sobre as folhas, rosetas, frutos novos, ramos laterais e, ainda, ramos do ponteiro das plantas, atacando tanto mudas no viveiro, como plantas novas no campo e, também, cafeeiros adultos.",
-  InformSymp:
-    "A doença ataca folhas, ramos, frutos novos e rosetas, podendo ser encontrada tanto em viveiros, quanto no campo. A bactéria ataca de forma sistêmica os ramos, que inicialmente ficam com uma coloração escura. Em seguida, ataca as folhas e o sintoma se caracteriza por uma mancha necrótica de coloração parda, podendo ser envolvida por um halo-amarelado, consequentemente levando à queda das folhas e diminuição da produção de fotoassimilados pela planta. Já nos órgãos florais do cafeeiro, causa a queda de flores e frutos chumbinhos, e consequentemente diminuição da produção. O ataque da doença pode causar a morte da planta em até 1 ano, sintoma que as vezes pode ser confundido com outras doenças, como rizoctoniose.",
-  InfoTreatm:
-    "Primeiramente, é preciso entender que o manejo da Mancha Aureolada, como de qualquer outra bactéria, é complicado, pois o melhor controle é evitar sua entrada na planta, iniciando com plantio de mudas sadias e livres da bactéria. Visto que a única forma de tentar controlar a doença é por meio de aplicações de bactericidas, que são pouco eficientes e podem ocasionar facilmente resistência da bactéria ao produto, o controle é difícil e oneroso. Controles químicos estão obtendo melhores resultados, por meio de pulverizações preventivas com cúpricos no campo, e Hidróxido de Cobre e Casugamicina no viveiro, único antibiótico com registro para a cultura do café em viveiros no mercado. Nota-se, como estratégia de muitos produtores, pulverizações seguidas com Casugamicina, quando a bactéria já está na planta. Porém, após a introdução da doença na planta, esta tática de controle muitas vezes é uma medida irracional do produtor em controlar a doença, pois tem eficiência muito baixa. Desta forma, tem-se recomendado o uso da Casugamicina e Hidróxido de Cobre em viveiros, e em lavouras adultas o uso de cúpricos de maneira preventiva nas regiões sujeitas à enfermidade, já que não existe registro para o Casugamicina em lavouras adultas.",
-};

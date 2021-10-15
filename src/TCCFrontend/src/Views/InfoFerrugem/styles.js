@@ -7,6 +7,7 @@ export const Container = styled.div`
   flex-wrap: wrap;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: #636363;
 `;
 
 export const ImageContainer = styled.div`
@@ -88,6 +89,9 @@ export const Title = styled.p`
   margin-bottom: 10px;
   margin-top: 25px;
   font-size: 23px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: black;
 `;
 
 export const TitleInf = styled.p`
@@ -98,6 +102,9 @@ export const TitleInf = styled.p`
   margin-bottom: 10px;
   margin-top: 25px;
   font-size: 20px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: black;
 `;
 
 export const Subtitle = styled.p`
@@ -110,16 +117,9 @@ export const Subtitle = styled.p`
   color: #636363;
   font-size: 18px;
   text-align: justify;
-`;
-
-export const DangerTitle = styled.p`
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  margin-bottom: 10px;
-  margin-top: 25px;
-  text-align: justify;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: #636363;
 `;
 
 export const HeaderItem = styled.div`
@@ -140,15 +140,3 @@ export const BottomController = styled.div`
   margin-top: 16rem;
   align-items: center;
 `;
-
-export const FIVE_SECONDS = 5000;
-
-export const INFOS = {
-  imagens: ["imagem1", "imagem2", "imagem3", "imagem4"],
-  InfoDiasese:
-    "A ferrugem é um fungo da espécie Hemileia vastatrix que ataca o cafeeiro. É a doença mais importante em termos de necessidade de controle e se caracteriza pelo aparecimento de pústulas com esporos de coloração amarelo escura a marrom na superfície das folhas, a partir da emergência até o estádio de maturação, provocando desfolha.",
-  InformSymp:
-    "Os sintomas da doença surgem na face inferior da folha. No início, as manchas são pequenas, variando de 1 a 3 mm de diâmetro, com coloração amarelo-pálida. Posteriormente, as manchas podem atingir até 2 cm de diâmetro e passam a exibir coloração amarelo-alaranjada e aspecto pulverulento. Nessa fase é possível observar lesões cloróticas amarelas na face superior da folha, correspondentes às pústulas existentes na face inferior. Essas lesões aumentam de tamanho, e o centro adquire aspecto necrótico.",
-  InfoTreatm:
-    "O uso de cultivares resistentes é o melhor método de controle. Os fungicidas de contato, principalmente os cúpricos, e os sistêmicos podem ser utilizados para o controle preventivo da doença. Recomenda-se efetuar alternância entre fungicidas de contato e sistêmicos. O emprego de fungicidas sistêmicos pode ser via foliar ou via solo. A calda viçosa, uma mistura de nutrientes que apresenta efeito fungicida, também é utilizada no controle. Sempre usar produtos que sejam registrados para as culturas..",
-};
