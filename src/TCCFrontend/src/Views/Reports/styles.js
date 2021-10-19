@@ -17,7 +17,6 @@ export const ImageContainer = styled.div`
 
   @media (max-width: 1100px) {
     height: 50%;
-    background-color: purple;
     display: grid;
     justify-content: space-around;
     background-color: #0aa55f30;

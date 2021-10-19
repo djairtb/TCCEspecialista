@@ -1,101 +1,134 @@
+import aboutUsBackground from "../../Images/aboutus_capa.png";
 import styled from "styled-components";
-import ContBackground from "../../Images/foto2.png";
 
 export const Container = styled.div`
   width: 100%;
-  height: 100vh;
-  background: url(${ContBackground});
-  background-size: cover;
-  margin-top: -0.2em;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-`;
-
-export const Box = styled.div`
-  width: 30%;
-  height: 47%;
-  background-color: hsl(57deg 25% 87% / 65%);
+  height: 90%;
   display: flex;
+  box-sizing: border-box;
+  display: block;
   justify-content: center;
-  margin-left: 30em;
-  margin-top: 2em;
-  position: fixed;
-  border-radius: 1em;
-  float: right;
-  padding: 1em;
-
-  @media (max-width: 500px) {
-    margin-left: 4em;
-    width: 80%;
-    vertical-align: middle;
-    background-color: red;
-    margin-top: 3em;
-    padding: 1em;
-  }
-
-  @media (min-width: 501px) and (max-width: 700px) {
-    margin-left: 5em;
-    width: 60%;
-    height: 48%;
-    vertical-align: middle;
-    background-color: blue;
-    margin-top: 3em;
-    padding: 1em;
-  }
-
-  @media (min-width: 701px) and (max-width: 1000px) {
-    margin-left: 15em;
-    width: 50%;
-    height: 48%;
-    vertical-align: middle;
-    background-color: yellow;
-    margin-top: 3em;
-    padding: 1em;
-  }
-
-  @media (min-width: 1001px) and (max-width: 1300px) {
-    margin-left: 25em;
-    width: 35%;
-    height: 48%;
-    vertical-align: middle;
-    background-color: red;
-    margin-top: 3em;
-    padding: 1em;
-  }
+  flex-wrap: wrap;
+  align-items: center;
+  position: absolute;
+  overflow: hidden;
 `;
-
-export const Contact = styled.div`
-  margin-top: 2em;
-  //background-color: blue;
+export const BannerContact = styled.div`
   width: 100%;
   height: 40%;
-  margin-top: 2em;
-  padding: 3em;
+  background-color: #b1cfbf;
+  margin-top: -1.9em;
+  font-weight: bold;
+
+  @media (min-width: 1700px) and (max-width: 2000px) {
+    margin-top: -2.5em;
+  }
+`;
+
+export const Telephone = styled.div`
+  //background-color: red;
+  margin-top: -2em;
   justify-content: center;
+  margin-right: 3em;
+
+  @media (min-width: 360px) and (max-width: 500px) {
+    margin-top: -2em;
+    display: grid;
+  }
+  @media (min-width: 250px) and (max-width: 350px) {
+    width: 15em;
+    display: grid;
+    //background-color: blanchedalmond;
+    margin-left: -3em;
+    margin-top: -2em;
+    font-size: 22px;
+  }
+`;
+
+export const Email = styled.div`
+  // background-color: blueviolet;
+
+  @media (min-width: 360px) and (max-width: 500px) {
+    width: 15em;
+    display: grid;
+    //background-color: blanchedalmond;
+    margin-left: -2em;
+    margin-top: -1em;
+  }
+
+  @media (min-width: 250px) and (max-width: 350px) {
+    width: 15em;
+    display: grid;
+    margin-left: -3em;
+    margin-top: -1em;
+    font-size: 22px;
+  }
+`;
+
+export const Address = styled.div`
+  //background-color: aquamarine;
+  margin-right: 1em;
+  width: 3wm;
+
+  @media (min-width: 360px) and (max-width: 500px) {
+    margin-right: 3em;
+    width: 11em;
+    display: grid;
+    margin-top: -1em;
+  }
+  @media (min-width: 250px) and (max-width: 350px) {
+    width: 15em;
+    display: grid;
+    margin-left: -3em;
+    margin-top: -1em;
+    font-size: 22px;
+    height: 6em;
+  }
 `;
 
 export const Title = styled.p`
-  font-size: 26px;
   justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: center;
+  font-size: 30px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  font-weight: bold;
-  //background-color: red;
-  height: 10%;
-  position: absolute;
+  color: #1b524b;
+  padding: 3em;
+
+  @media (min-width: 250px) and (max-width: 500px) {
+    font-size: 23px;
+  }
+  @media (min-width: 1700px) and (max-width: 2000px) {
+    font-size: 40px;
+  }
 `;
 
-export const Phone = styled.p`
-  font-size: 19px;
-  margin-top: -1em;
+export const Cont = styled.div`
+  width: 100%;
+  height: 60%;
+  background-color: white;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+  font-size: 23px;
+  display: flex;
 `;
 
-export const Email = styled.p`
-  font-size: 19px;
-  margin-top: 2em;
-`;
+export const BannerTwo = styled.div`
+  width: 100%;
+  height: 30%;
+  // background-color: purple;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+  font-size: 25px;
+  padding: 2em;
+  margin-top: -2em;
 
-export const Address = styled.p`
-  font-size: 19px;
-  margin-top: 2em;
+  @media (min-width: 250px) and (max-width: 500px) {
+    height: 60%;
+    margin-top: -3em;
+  }
 `;
