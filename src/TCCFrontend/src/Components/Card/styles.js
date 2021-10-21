@@ -4,15 +4,16 @@ export const CardContainer = styled.div`
   height: 25rem;
   width: 250px;
   border: 3px solid #cec3c3;
+  margin-bottom: 2em;
 
   &:hover {
     box-shadow: 20px 5px 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
   }
-  margin: 5px;
-  margin-left: 1em;
+
   @media (max-width: 600px) {
     margin-top: 1em;
+    margin-bottom: 1em;
   }
 `;
 
@@ -26,7 +27,7 @@ export const CardHeader = styled.div`
   align-items: center;
   color: #ffffff;
   font-size: 30px;
-  filter: brightness(80%);
+  filter: brightness(70%);
 `;
 
 export const CardBody = styled.div`

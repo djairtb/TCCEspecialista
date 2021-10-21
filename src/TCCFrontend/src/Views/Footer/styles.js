@@ -56,10 +56,13 @@ export const Icons = styled.div`
   color: white;
   margin-right: 2em;
   align-items: end;
+  cursor: pointer;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 15px;
 
   @media (max-width: 800px) {
     width: 20%;
     margin-bottom: 1em;
-    margin-left: 1em;
   }
 `;

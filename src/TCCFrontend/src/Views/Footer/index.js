@@ -13,9 +13,9 @@ function Footer() {
       <Text>© 2021 Coffee Diseases Recognition. All rights reserved</Text>
       <Icons>
         Siga-nos &nbsp;
-        <i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i> &nbsp;
-        <i class="fa fa-instagram fa-2x" aria-hidden="true"></i> &nbsp;
-        <i class="fa fa-twitter fa-2x" aria-hidden="true"></i> &nbsp;
+        <i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i> &nbsp;
+        <i class="fa fa-instagram fa-lg" aria-hidden="true"></i> &nbsp;
+        <i class="fa fa-twitter fa-lg" aria-hidden="true"></i> &nbsp;
       </Icons>
     </FooterContainer>
   );

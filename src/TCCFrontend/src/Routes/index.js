@@ -5,7 +5,6 @@ import LoginForm from "../Views/Login";
 import Reports from "../Views/Reports";
 import AppRoutes from "./AppRoutes";
 import LoginRoute from "./LoginRoutes";
-import WhoWeAre from "../Views/WhoWeAre";
 import Home from "../Views/Home";
 import ContactUs from "../Views/ContactUs";
 import ForgotPass from "../Views/ForgotPassword";
@@ -24,7 +23,6 @@ export default function Routes() {
       <LoginRoute path="/recoverpass" component={RecoverPass} />
       <AppRoutes path="/home" component={Home} />
       <AppRoutes path="/reports" component={Reports} />
-      <AppRoutes path="/whoweare" component={WhoWeAre} />
       <AppRoutes path="/contactus" component={ContactUs} />
       <AppRoutes path="/infoferrugem" component={InfoFerrugem} />
       <AppRoutes path="/infocercosporiose" component={InfoCercosporiose} />

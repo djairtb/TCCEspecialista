@@ -7,6 +7,7 @@ export const Container = styled.div`
   flex-wrap: wrap;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: #636363;
 `;
 
 export const ImageContainer = styled.div`
@@ -88,6 +89,9 @@ export const Title = styled.p`
   margin-bottom: 10px;
   margin-top: 25px;
   font-size: 23px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: black;
 `;
 
 export const TitleInf = styled.p`
@@ -98,6 +102,9 @@ export const TitleInf = styled.p`
   margin-bottom: 10px;
   margin-top: 25px;
   font-size: 20px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: black;
 `;
 
 export const Subtitle = styled.p`
@@ -110,6 +117,9 @@ export const Subtitle = styled.p`
   color: #636363;
   font-size: 18px;
   text-align: justify;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: #636363;
 `;
 
 export const DangerTitle = styled.p`
@@ -140,15 +150,3 @@ export const BottomController = styled.div`
   margin-top: 16rem;
   align-items: center;
 `;
-
-export const FIVE_SECONDS = 5000;
-
-export const INFOS = {
-  imagens: ["imagem1", "imagem2", "imagem3", "imagem4"],
-  InfoDiasese:
-    "Doença causada pelo fungo Cercospora coffeicola BerK. & Cooke, fungo necrotrófico, que invade as células e as matam, nutrindo-se das mesmas. Essa doença pode atacar desde mudas no viveiro causando intensa desfolha, afetando o crescimento e desenvolvimento das plantas, ou mesmo lavouras adultas, que além da queda de folhas pode proporcionar queda de frutos. Por isso, a falta de um manejo adequado e sob condições favoráveis para o desenvolvimento dessa doença, pode resultar em grandes perdas na produção.",
-  InformSymp:
-    "A Cercospora pode atacar tanto folhas quanto frutos em desenvolvimento, nas folhas os sintomas característicos são manchas circulares de coloração castanho-clara a escura, com o centro branco-acinzentado, quase sempre envolvidas por um halo amarelado.",
-  InfoTreatm:
-    "Como medidas gerais de controle é importante evitar as deficiências e desequilíbrios nutricionais, visto que a nutrição tem grande influência na incidência dessa doença. Dessa forma, um planejamento adequado e equilibrado das adubações e um acompanhamento das análises foliares torna-se essencial. Estando sempre atento a relação dos nutrientes, principalmente cálcio e potássio. Também, um fornecimento adequado de matéria orgânica, tanto na preparação de mudas no viveiro, como no campo, com o intuito de proporcionar melhores condições nutricionais. No plantio, além de evitar plantios tardios, é importante que seja feita uma boa preparação do solo, a fim de evitar a compactação do mesmo, para que não afete na absorção de nutrientes pelas raízes. Além disso, alguns estudos sugerem a utilização de silício no controle da cercosporiose, os mecanismos pelos quais o silício pode conferir resistência a determinada doença podem ser por acúmulo do elemento na parede das células da epiderme e cutícula, acúmulo no local de penetração do patógeno (barreiras naturais).",
-};

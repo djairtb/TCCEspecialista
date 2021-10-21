@@ -21,7 +21,7 @@ function NavBar() {
           <i className="fa fa-pie-chart" aria-hidden="true"></i> &nbsp;
           Relatório &nbsp; | &nbsp;
         </NavLink>
-        <NavLink to="/whoweare">
+        <NavLink to="/aboutus">
           <i class="fa fa-question-circle" aria-hidden="true"></i> &nbsp; Quem
           somos &nbsp; | &nbsp;
         </NavLink>
