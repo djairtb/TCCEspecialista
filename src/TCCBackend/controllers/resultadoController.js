@@ -1,9 +1,21 @@
+const resultsRepository = require('../repository/resultsRepository');
+
 exports.getUserResults = (req, res, next) => {
-    let id = req.params.id;
-    res.status(201).send(`Requisição recebida com sucesso! ${id}`);
+    let userid = req.params.user_id;
+    let resp = await resultsRepository.getResultByUserID(userid); 
+    if(resp)
+        res.status(200).send(resp);
+    else
+        res.status(505).send('erro ao buscar informações')
 };
 
-exports.getById = (req, res, next) => {
-    let userId = req.body.userId;
-    res.status(201).send(`Requisição recebida com sucesso! ${id}`);
-};
+exports.getDateRange = (req, res,next) =>{
+    let inicio = req.params.dataInicio;
+    let fim = req.params.dataFim;
+    let userid = req.params.user_id;
+    let resp = await resultsRepository.getResultByUserID(userid); 
+    if(resp)
+        res.status(200).send(resp);
+    else
+        res.status(505).send('erro ao buscar informações')
+}
