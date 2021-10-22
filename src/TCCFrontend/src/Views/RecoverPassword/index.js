@@ -1,9 +1,15 @@
 import React, { useCallback, useRef } from "react";
 import Button from "../../Components/Button";
 import Input from "../../Components/Input";
-import { FormItem, RegisterLink, FormTitle, Line, Container, Opacity, Form, Subtitle } from "./styles";
-
-
+import {
+  FormItem,
+  RegisterLink,
+  FormTitle,
+  Line,
+  Container,
+  Opacity,
+  Form,
+} from "./styles";
 
 function RecoverPass() {
   const inputPasswordRef = useRef();
@@ -14,51 +20,47 @@ function RecoverPass() {
     console.log(inputPasswordRef?.current.value);
     console.log(inputPasswordTwoRef?.current.value);
   }, []);
-  
+
   return (
     <Container>
-    <Opacity  />
-    <Form>
-      <FormTitle>REDEFINIR SENHA</FormTitle>
-      <Line />
-      <FormItem>
-  
-     </FormItem>
+      <Opacity />
+      <Form>
+        <FormTitle>REDEFINIR SENHA</FormTitle>
+        <Line />
+        <FormItem></FormItem>
 
-      <FormItem>
-        <Input 
+        <FormItem>
+          <Input
             width="261px"
             required
             type="password"
             placeholder="Digite sua senha nova senha"
-            ref={inputPasswordRef} 
-        />
-      </FormItem>
+            ref={inputPasswordRef}
+          />
+        </FormItem>
 
-      <FormItem>
-      <Input 
+        <FormItem>
+          <Input
             width="261px"
             required
             type="password"
             placeholder="Repita sua senha nova senha"
-            ref={inputPasswordTwoRef} 
-        />
-      </FormItem>
+            ref={inputPasswordTwoRef}
+          />
+        </FormItem>
 
-      <FormItem>
-        <Button width="261px" type="submit">Redefinir</Button>
-      </FormItem>
-    
-      <FormItem>
-        <RegisterLink to="/login">Logar novamente</RegisterLink>
+        <FormItem>
+          <Button width="261px" type="submit">
+            Redefinir
+          </Button>
+        </FormItem>
 
-     
-      </FormItem>
-
-    </Form>
-
-  </Container>
-);
+        <FormItem>
+          <RegisterLink to="/login">Logar novamente</RegisterLink>
+        </FormItem>
+      </Form>
+    </Container>
+  );
 }
 
 export default RecoverPass;

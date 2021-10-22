@@ -33,6 +33,17 @@ export const NavLink = styled(Link)`
   //opacity: 0.9;
 `;
 
+export const LogoutButton = styled.div`
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+
+  //opacity: 0.9;
+`;
+
 export const MobileContainer = styled.div`
   width: 60%;
   display: flex;

@@ -1,20 +1,25 @@
 const INITIAL_STATE = {
-  isAuthenticasted: false,
+  isAuthenticated: false,
   username: "",
   email: "",
 };
 
-const todos = (state = INITIAL_STATE, action) => {
+const loginReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case "LOGIN_SUCCESS":
       return {
         ...state,
-        isAuthenticasted: true,
+        isAuthenticated: true,
         ...action.payload,
+      };
+    case "LOGOUT":
+      return {
+        ...INITIAL_STATE,
+        isAuthenticated: false,
       };
     default:
       return state;
   }
 };
 
-export default todos;
+export default loginReducer;

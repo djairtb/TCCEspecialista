@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useCallback } from "react";
+import { useDispatch } from "react-redux";
 import logo from "./folha1.png";
-import { StyledNavbar, Img, NavLink } from "./styles";
+import { StyledNavbar, Img, NavLink, LogoutButton } from "./styles";
 import MobileView from "./MobileView";
 import { isMobile } from "react-device-detect";
+import { logout } from "../../Redux/Actions";
 
 function NavBar() {
+  const dispatch = useDispatch();
+
+  const onLogoutClick = useCallback(() => {
+    dispatch(logout());
+  }, []);
+
   if (isMobile) {
     return <MobileView />;
   }
@@ -29,9 +37,9 @@ function NavBar() {
           <i class="fa fa-phone" aria-hidden="true"></i> &nbsp; Contato&nbsp;
         </NavLink>
       </div>
-      <NavLink to="/login">
+      <LogoutButton onClick={onLogoutClick}>
         <i class="fa fa-sign-out" aria-hidden="true"></i> Logout
-      </NavLink>
+      </LogoutButton>
     </StyledNavbar>
   );
 }

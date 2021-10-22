@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useCallback } from "react";
 import logo from "../folha1.png";
-import { StyledNavbar, Img, NavLink, MobileContainer } from "../styles";
+import { useDispatch } from "react-redux";
+import {
+  StyledNavbar,
+  Img,
+  NavLink,
+  MobileContainer,
+  LogoutButton,
+} from "../styles";
+import { logout } from "../../../Redux/Actions";
 
 export default function MobileView() {
+  const dispatch = useDispatch();
+
+  const onLogoutClick = useCallback(() => {
+    dispatch(logout());
+  }, []);
+
   return (
     <StyledNavbar>
       <Img src={logo} alt="" />
@@ -22,9 +36,9 @@ export default function MobileView() {
           <i class="fa fa-phone fa-lg" aria-hidden="true"></i>
         </NavLink>
       </MobileContainer>
-      <NavLink to="/login">
+      <LogoutButton onClick={onLogoutClick}>
         <i class="fa fa-sign-out fa-lg" aria-hidden="true"></i>
-      </NavLink>
+      </LogoutButton>
     </StyledNavbar>
   );
 }

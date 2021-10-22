@@ -25,15 +25,11 @@ function LoginForm() {
 
   const onSubmit = useCallback(async (e) => {
     e.preventDefault();
-    await axios({
-      method: "POST",
-      data: {
+    await axios
+      .post("http://localhost:4000/login", {
         username: loginUsernameRef?.current.value,
         password: loginPasswordRef?.current.value,
-      },
-      withCredentials: true,
-      url: "http://localhost:4000/login",
-    })
+      })
       .then((userInfo) => {
         dispatch(loginSuccess(userInfo));
       })
