@@ -1,7 +1,7 @@
 const resultsRepository = require('../repository/resultsRepository');
 
 exports.getUserResults = async (req, res, next) => {
-    let userid = req.body.user_id;
+    let userid = req.body.userId;
     let resp = await resultsRepository.getResultByUserID(userid); 
     if(resp)
         res.status(200).send(resp);
@@ -12,8 +12,8 @@ exports.getUserResults = async (req, res, next) => {
 exports.getDateRange = async (req, res,next) =>{
     let inicio = req.body.dataInicio;
     let fim = req.body.dataFim;
-    let userid = req.body.user_id;
-    let resp = await resultsRepository.getResultByUserID(userid); 
+    let userid = req.body.userId;
+    let resp = await resultsRepository.getResultByUserID(userid,inicio,fim); 
     if(resp)
         res.status(200).send(resp);
     else

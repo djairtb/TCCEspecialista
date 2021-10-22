@@ -46,7 +46,7 @@ app.post("/login", (req, res, next) => {
     else {
       req.logIn(user, (err) => {
         if (err) throw err;
-        res.json({ isAuthenticated: true, ...user });
+        res.json({ isAuthenticated: true, ...user, token: 'sdfbgvhgfsvhj' });
       });
     }
   })(req, res, next);
