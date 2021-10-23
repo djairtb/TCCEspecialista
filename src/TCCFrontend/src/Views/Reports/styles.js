@@ -29,6 +29,19 @@ export const Line = styled.hr`
   margin-right: 90%;
 `;
 
+export const ContainerHeader = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: baseline;
+
+  @media (max-width: 600px) {
+    display: flex;
+    justify-content: space-between;
+  }
+`;
+
 export const Title = styled.p`
   width: 100%;
   display: flex;

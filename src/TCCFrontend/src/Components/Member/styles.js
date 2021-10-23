@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const MemberContainer = styled.div`
   height: 17rem;
   width: 10em;
-  border: 1px solid black;
+  //border: 1px solid black;
 
   align-items: center;
   justify-content: space-around;
@@ -20,10 +20,10 @@ export const MemberContainer = styled.div`
     flex-wrap wrap;
     margin-bottom: 4em;
     margin-left: 3em;
+    border: 1px solid black;
 
   }
- 
- 
+
 `;
 
 export const MemberHeader = styled.div`
@@ -64,5 +64,7 @@ export const MemberBody = styled.div`
    justify-content: center;
    flex-wrap: wrap;
    justify-content: space-between;
-    
+   justify-content: flex-start;
+    margin-left: -1em;
+  
 `;
