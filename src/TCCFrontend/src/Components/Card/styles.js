@@ -41,4 +41,9 @@ export const CardBody = styled.div`
   text-align: justify;
   color: #636363;
   font-size: 13px;
+
+  @media (max-width: 600px) {
+    font-size: 13.8px;
+    text-align: justify;
+  }
 `;

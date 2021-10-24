@@ -2,8 +2,8 @@ import React from "react";
 import aboutus_capa from "../../Images/aboutus_capa.png";
 import { Header } from "../InfoFerrugem/styles";
 import foto_home_capa from "../../Images/foto_home_capa.jpg";
-import foto1_home_capa from "../../Images/foto1_home_capa.jpg";
-import foto2_home_capa from "../../Images/foto2_home_capa.jpg";
+import ludi_foto from "../../Images/ludi_foto.jpeg";
+import nathalia_foto from "../../Images/nathalia_foto.jpg";
 import Member from "../../Components/Member";
 
 import {
@@ -64,13 +64,13 @@ function AboutUs() {
   };
 
   const memberItem6 = {
-    image: foto_home_capa,
+    image: ludi_foto,
     membersname: "Ludimila Araújo",
     occupation: "Dev Front-End",
   };
 
   const memberItem7 = {
-    image: foto_home_capa,
+    image: nathalia_foto,
     membersname: "Nathalia Santos",
     occupation: "Dev Front-End",
   };
