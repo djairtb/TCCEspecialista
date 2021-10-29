@@ -4,6 +4,9 @@ import { Header } from "../InfoFerrugem/styles";
 import foto_home_capa from "../../Images/foto_home_capa.jpg";
 import ludi_foto from "../../Images/ludi_foto.jpeg";
 import nathalia_foto from "../../Images/nathalia_foto.jpg";
+import andre_foto from "../../Images/andre_foto.jpeg";
+import juliana_foto from "../../Images/juliana_foto.jpeg";
+import barbara_foto from "../../Images/barbara_foto.jpeg";
 import Member from "../../Components/Member";
 
 import {
@@ -28,19 +31,19 @@ function AboutUs() {
     visao:
       "Ser refêrencia atraves da nossa tecnologia e boa performance para que as ONG´S auxiliem os agricultores no combate a doenças que possam aparecer nas folhas do café.",
     quemSomos:
-      "Somos uma equipe focada em entregar a melhor experiência para o usuário final. Queremos ajudar as ONG´s e os pequenos agricultores a monitorararem suas plantações. Este é um projeto iniciado no ano de 2021 para um Trabalho de conclusão de curso(TCC), mas que se transformará em algo muito maior, pois nos empenhamos diariamente para que um dia possamos fazer diferença no mundo.",
+      "Somos uma equipe focada em entregar a melhor experiência para o usuário final. Queremos ajudar as ONG's e os pequenos agricultores a monitorarem suas plantações. Este é um projeto iniciado no ano de 2021 para um Trabalho de conclusão de curso(TCC), mas que se transformará em algo muito maior, pois nos empenhamos diariamente para que um dia possamos fazer diferença no mundo.",
   };
 
   const { missao, visao, quemSomos } = INFOS;
 
   const memberItem1 = {
-    image: foto_home_capa,
+    image: andre_foto,
     membersname: "André Dames",
     occupation: "Analista e Design",
   };
 
   const memberItem2 = {
-    image: foto_home_capa,
+    image: barbara_foto,
     membersname: "Bárbara Nunes",
     occupation: "Dev Back-End",
   };
@@ -58,7 +61,7 @@ function AboutUs() {
   };
 
   const memberItem5 = {
-    image: foto_home_capa,
+    image: juliana_foto,
     membersname: "Juliana Carvalho",
     occupation: "Serviços de Hardware",
   };
