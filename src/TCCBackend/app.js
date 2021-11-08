@@ -1,6 +1,9 @@
 const express = require("express");
+const userRepository = require("./repository/userRepository")
+const jwt = require('express-jwt');
 const app = express();
 const User = require("./user");
+const fs = require('fs');
 const passport = require("passport");
 const session = require("express-session");
 const cors = require("cors");
@@ -11,6 +14,36 @@ const resultadosRoute = require("./routes/resultadoRoute");
 
 //Middlewares
 // ----------------------------------------------------------------
+
+let secRoutes = (req) => {
+  return req.url.startsWith("/login");
+};
+
+let fromHeaderOrCookie = (req) => {
+  if (req.headers.authorization && req.headers.authorization.split(' ')[0] === 'Bearer') {
+      return req.headers.authorization.split(' ')[1];
+  } else if (req.cookies && req.cookies["token"]) {
+      return req.cookies["tcc-token"];
+  }
+  return null;
+}
+let publicKey = fs.readFileSync('./certs/public.pem', 'utf8');
+
+
+let secRoutes = (req) => {
+  return req.url.startsWith("/login");
+};
+
+app.use(jwt({
+  secret: publicKey,
+  algorithms: ['RS256'],
+  requestProperty: 'jwt',
+  getToken: fromHeaderOrCookie
+},
+).unless(
+  { custom: secRoutes }
+)
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -46,7 +79,7 @@ app.post("/login", (req, res, next) => {
     else {
       req.logIn(user, (err) => {
         if (err) throw err;
-        let retorno = {isAuthenticated: true, ...user, token: 'sdfbgvhgfsvhj'}
+        let retorno = {isAuthenticated: true, ...user, token: 'eyJhbGciOiJSUzI1NiJ9.eyJ0Y2NhdXRlbnRpY2FjYW8iOiJ0cnVlIiwidG9rZW5leGVtcGxvIjoiMDEifQ.I61JfnWsC2LGpN9jpJe45PGF4JSh9wYID0PZ3BIfICUrrYfEjUnYcgrtIH2Ccph23pH-NmUpg8OSaJ27bZFzSw6BInkvxaREmMvy2-KCdXQmy4VABx-CclDIMsIoytlIDDspiqWxz-Z8hQKm-44jIpdA8doWcE_-UhsAsbivX1_Biwz0huYcLp1Bq7LnVdPO6lq6zOzUdU1QLzwFUlE1mPLF7GSEoWMfDDHPbH-s-554Ofizn6117U0pu7ivhOocyh0UWTLKEavcnD5Wsxm8Vx4sS_CgIP66YAfzLE4yEm_vry5bBJT6pWBtGOBHzdvv0nNu9ebbs8bnHj36YSCX5g'}
         res.json(retorno);
       });
     }
@@ -58,13 +91,15 @@ app.post("/register", (req, res) => {
     if (doc) res.send("Usuário já existe");
     if (!doc) {
       const hashedPassword = await bcrypt.hash(req.body.password, 10);
-
-      const newUser = new User({
-        username: req.body.username,
-        password: hashedPassword,
-      });
-      await newUser.save();
-      res.send("Usuario Criado");
+      const username = req.body.username;
+      const email = req.body.email;
+      const nome = req.body.nome;
+      try {
+        await userRepository.userRegister(username, hashedPassword,email,nome)
+        res.send("Usuario Criado");
+      } catch (error) {
+        res.send("Erro ao criar usuário");
+      }
     }
   });
 });
