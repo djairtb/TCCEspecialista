@@ -7,6 +7,8 @@ import nathalia_foto from "../../Images/nathalia_foto.jpg";
 import andre_foto from "../../Images/andre_foto.jpeg";
 import juliana_foto from "../../Images/juliana_foto.jpeg";
 import barbara_foto from "../../Images/barbara_foto.jpeg";
+import djair_foto from "../../Images/djair_foto.jpeg";
+import geovana_foto from "../../Images/geovana_foto.jpeg";
 import Member from "../../Components/Member";
 
 import {
@@ -49,13 +51,13 @@ function AboutUs() {
   };
 
   const memberItem3 = {
-    image: foto_home_capa,
+    image: djair_foto,
     membersname: "Djair Barral",
     occupation: "Dev Back-End",
   };
 
   const memberItem4 = {
-    image: foto_home_capa,
+    image: geovana_foto,
     membersname: "Geovana Martins",
     occupation: "Serviços em nuvem",
   };

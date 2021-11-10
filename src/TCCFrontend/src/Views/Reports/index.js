@@ -1,7 +1,8 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import Input from "../../Components/Input";
 import Button from "../../Components/Button";
 import { useSelector } from "react-redux";
+import axios from "axios";
 import {
   Title,
   Subtitle,
@@ -12,27 +13,41 @@ import {
   FileImg,
   ContainerHeader,
 } from "./styles";
-import client from "../../Services/client";
 
 const INITIAL_DATE = new Date();
-const MOCK_DATA = {
-  resultTitle: "Praga",
-  result:
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-  solution:
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-};
+const initialReportData = [
+  {
+    tagname_pred: "Indefinido",
+    data_pred: "2021-10-25T05:03:12.785Z",
+    user_id: 1,
+    url_pred:
+      "https://tccimgstorageacc.blob.core.windows.net/imgprediction/2.JPG",
+  },
+];
 
 function Reports() {
   const [initialDate, setInitialDate] = useState(INITIAL_DATE);
   const [finalDate, setFinalDate] = useState(INITIAL_DATE);
-  const [imagens, setImagens] = useState([]);
+  const [reportData, setReportData] = useState(initialReportData);
 
   const userid = useSelector(({ login }) => {
     return login.userid;
   });
 
-  const { resultTitle, result, solution } = MOCK_DATA;
+  const fetchData = useCallback(async () => {
+    const { data } = await axios.post("http://localhost:4000/all", {
+      inicio: initialDate,
+      fim: finalDate,
+      userId: userid,
+    });
+    if (data) {
+      setReportData(data);
+    }
+  }, [finalDate, initialDate, userid]);
+
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
 
   const onChangeInitialDate = useCallback((e) => {
     setInitialDate(e.target.value);
@@ -43,21 +58,20 @@ function Reports() {
   }, []);
 
   const onRequestClick = useCallback(async () => {
-    console.log(initialDate, finalDate);
     if (initialDate && finalDate) {
-      const { data } = await client("resultados/date", {
-        dataInicio: initialDate,
-        dataFim: finalDate,
+      const { data } = await axios.post("http://localhost:4000/date", {
+        inicio: initialDate,
+        fim: finalDate,
         userId: userid,
       });
+      if (data) {
+        setReportData(data);
+      }
     }
-    const { data } = await client("resultados/all", {
-      userId: userid,
-    });
   }, [initialDate, finalDate, userid]);
 
   const renderImage = useCallback(
-    (image) => <FileImg src={image} alt="image" key={image} />,
+    ({ url_pred }, key) => <FileImg src={url_pred} alt="image" key={key} />,
     []
   );
 
@@ -80,22 +94,22 @@ function Reports() {
         />
         <Button onClick={onRequestClick}>Solicitar</Button>
       </ContainerHeader>
-      {imagens.length ? (
+      {reportData.length ? (
         <>
           <Title>Imagens Coletadas</Title>
           <Line />
-          <ImageContainer>{imagens.map(renderImage)}</ImageContainer>
+          <ImageContainer>{reportData.map(renderImage)}</ImageContainer>
         </>
       ) : null}
       <Title>Resultado</Title>
       <Line />
-      <DangerTitle>{resultTitle}</DangerTitle>
+      <DangerTitle></DangerTitle>
       <Title>Sintomas</Title>
       <Line />
-      <Subtitle>{result}</Subtitle>
+      <Subtitle></Subtitle>
       <Title>Tratamento</Title>
       <Line />
-      <Subtitle>{solution}</Subtitle>
+      <Subtitle></Subtitle>
     </Container>
   );
 }
