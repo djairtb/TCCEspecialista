@@ -29,11 +29,6 @@ let fromHeaderOrCookie = (req) => {
 }
 let publicKey = fs.readFileSync('./certs/public.pem', 'utf8');
 
-
-let secRoutes = (req) => {
-  return req.url.startsWith("/login");
-};
-
 app.use(jwt({
   secret: publicKey,
   algorithms: ['RS256'],

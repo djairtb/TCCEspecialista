@@ -13,7 +13,7 @@ exports.getDateRange = async (req, res,next) =>{
     let inicio = req.body.dataInicio;
     let fim = req.body.dataFim;
     let userid = req.body.userId;
-    let resp = await resultsRepository.getResultByUserID(userid,inicio,fim); 
+    let resp = await resultsRepository.getResultByDateRange(userid,inicio,fim); 
     if(resp)
         res.status(200).send(resp);
     else
