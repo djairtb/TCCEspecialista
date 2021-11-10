@@ -62,7 +62,7 @@ export const FormItem = styled.div`
   display: flex;
   justify-content: center;
 
-  @media (max-width: 2500px) {
+  @media (max-width: 2700px) {
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -82,7 +82,7 @@ export const Opacity = styled.div`
   height: 100%;
   filter: brightness(60%);
 
-  @media (max-width: 2500px) {
+  @media (max-width: 2700px) {
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;

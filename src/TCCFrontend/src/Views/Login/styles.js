@@ -64,7 +64,7 @@ export const Opacity = styled.div`
   height: 100%;
   filter: brightness(60%);
 
-  @media (max-width: 2500px) {
+  @media (max-width: 2700px) {
     background-repeat: no-repeat;
     background-size: cover;
   }
