@@ -1,9 +1,9 @@
 const db = require('./dbRepository')
 
-let getUserCredentials = async (login, passwordHash) => {
+let getUserCredentials = async () => {
     let result;
     try {
-        await db.pool.query('SELECT u.id,u.nome from public.users u WHERE u.login = $1 AND u.pass_hash = $2',[login,passwordHash]).then(res =>{
+        await db.pool.query('SELECT * from public.users').then(res =>{
             result = res.rows
         })
         return result

@@ -1,21 +1,26 @@
 const bcrypt = require('bcrypt');
 const LocalStrategy = require('passport-local').Strategy;
+const repo = require("./repository/userRepository")
 
-const users = [{
-    id: 1,
-    username: 'tcc',
-    password: '$2a$06$HT.EmXYUUhNo3UQMl9APmeC0SwoGsx7FtMoAWdzGicZJ4wR1J8alW',
-    email: 'tcc@tcc.com'
-},
-{
-    id: 2,
-    username: 'geovana',
-    password: '$2a$06$HT.EmXYUUhNo3UQMl9APmeC0SwoGsx7FtMoAWdzGicZJ4wR1J8alW',
-    email: 'tcc@tcc.com'
-}]
+let users
+async function loadUser() {
+    let usersq = await repo.getUserCredentials()
+    users = usersq.map(user =>{
+        return{
+            id: user.id,
+            username: user.login,
+            email: user.email,
+            password: user.pass_hash,
+            nome: user.nome
+        }
+    })
+}
+loadUser()
+ 
 
 module.exports = function(passport) {
     function findUser(username){
+        loadUser()
         return users.find(item => item.username === username);
     }
     function findUserById(id){

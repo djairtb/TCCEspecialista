@@ -111,10 +111,6 @@ app.post("/register", async (req, res) => {
  
 });
 
-app.get("/user", (req, res) => {
-  res.send(req.user);
-});
-
 //-----------------------------------------------------------------
 
 const port = process.env.PORT || "4000";
