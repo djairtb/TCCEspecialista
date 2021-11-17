@@ -75,8 +75,9 @@ function Reports() {
     []
   );
   const renderObject = useCallback(
-    ({ url_pred }, key) => <Title> {url_pred} </Title>,
+    ({ url_pred,tagname_pred,data_pred }, key) => <ul><li>{tagname_pred}</li><li>{<FileImg src={url_pred} alt="image" key={key} />}</li><li>{data_pred}</li></ul>,  
     []
+
   );
 
   return (
@@ -100,8 +101,8 @@ function Reports() {
       </ContainerHeader>
       {reportData.length ? (
         <>
-          <Title>Imagens Coletadas</Title>
-          <Title>{reportData.map(renderObject)}</Title>
+          <Title>Relatorio de Predições:</Title>
+          {reportData.map(renderObject)}
           <Line />
           <ImageContainer>{reportData.map(renderImage)}</ImageContainer>
         </>
