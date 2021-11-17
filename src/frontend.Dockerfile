@@ -1,5 +1,5 @@
 
-FROM node:14 as build-app
+FROM node:16 as build-app
 
 WORKDIR /app
 
@@ -9,4 +9,4 @@ COPY TCCFrontend/. .
 RUN npm run build
 COPY --from=build-app /app/dist /app/app/dist
 EXPOSE 3000
-CMD [ "npm start" ]
+CMD ["npm","start"]
