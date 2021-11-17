@@ -1,5 +1,5 @@
 
-FROM node:latest as build-app
+FROM node:14 as build-app
 
 WORKDIR /app
 
