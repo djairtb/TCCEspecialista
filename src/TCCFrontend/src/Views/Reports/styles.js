@@ -28,6 +28,17 @@ export const Line = styled.hr`
   width: 150px;
   margin-right: 90%;
 `;
+export const Lista = styled.ul`
+display: block;
+list-style-type: none;
+border: 1px solid black;
+margin-top: 1em;
+margin-bottom: 1 em;
+margin-left: 0;
+margin-right: 0;
+padding-left: 40px;
+`;
+
 
 export const ContainerHeader = styled.div`
   width: 100%;
@@ -51,6 +62,7 @@ export const Title = styled.p`
   margin-top: 25px;
   font-size: 24px;
 `;
+
 
 export const Subtitle = styled.p`
   width: 100%;

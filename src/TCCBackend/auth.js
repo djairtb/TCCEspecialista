@@ -8,7 +8,7 @@ const users = [{
     email: 'tcc@tcc.com'
 },
 {
-    id: 1,
+    id: 2,
     username: 'geovana',
     password: '$2a$06$HT.EmXYUUhNo3UQMl9APmeC0SwoGsx7FtMoAWdzGicZJ4wR1J8alW',
     email: 'tcc@tcc.com'
@@ -19,24 +19,9 @@ module.exports = function(passport) {
         return users.find(item => item.username === username);
     }
     function findUserById(id){
-        return users.find(item => item.id === id);
+       user = users.find(item => item.id === id);
     }
-    passport.serializeUser((user,done)=>{
-        done(null,user);
-    })
-
-    passport.deserializeUser((id,done)=>{
-        try {
-            console.log(id)
-            const user = findUserById(id);
-            return done(null,user); 
-        } catch (error) {
-            console.log(error);
-            return done(err,null)
-        }
-    })
-
-    passport.use(new LocalStrategy({
+    passport.use('login',new LocalStrategy({
         usernameField: 'username',
         passwordField: 'password',
     },
@@ -44,15 +29,26 @@ module.exports = function(passport) {
         try {
             const user = findUser(username)
             if(!user) return done(null,false)
-
             const isValid = bcrypt.compareSync(password, user.password)
-
-            if(!isValid) return done(null,user)
-            return done(null,true)
+            if(!isValid) return done(null,false)
+            return done(null,user)
         } catch (error) {
-            console.log(error);
             return done(err,false)
             
         }
     }))
+    passport.serializeUser((user,done)=>{
+        done(null,user.id);
+    })
+
+    passport.deserializeUser(async(id,done)=>{
+        try {
+            const user =  await findUserById(id);
+            done(null,user); 
+        } catch (error) {
+            console.log(error);
+            done(error,null)
+        }
+    })
+
 }

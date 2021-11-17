@@ -8,6 +8,7 @@ import {
   Subtitle,
   ImageContainer,
   DangerTitle,
+  Lista,
   Line,
   Container,
   FileImg,
@@ -31,14 +32,15 @@ function Reports() {
   const [reportData, setReportData] = useState(initialReportData);
 
   const userid = useSelector(({ login }) => {
-    return login.userid;
+    return login.id;
   });
 
   const fetchData = useCallback(async () => {
     const { data } = await axios.post("http://localhost:4000/resultados/all", {
-      userId: 1,
+      userId: userid,
     });
     if (data) {
+      console.log(userid);
       console.log(data);
       setReportData(data);
     }
@@ -61,7 +63,7 @@ function Reports() {
       const { data } = await axios.post("http://localhost:4000/resultados/date", {
         dataInicio: initialDate,
         dataFim: finalDate,
-        userId: 1,
+        userId: userid,
       });
       if (data) {
         console.log(data)
@@ -70,12 +72,8 @@ function Reports() {
     }
   }, [initialDate, finalDate, userid]);
 
-  const renderImage = useCallback(
-    ({ url_pred }, key) => <FileImg src={url_pred} alt="image" key={key} />,
-    []
-  );
   const renderObject = useCallback(
-    ({ url_pred,tagname_pred,data_pred }, key) => <ul><li>{tagname_pred}</li><li>{<FileImg src={url_pred} alt="image" key={key} />}</li><li>{data_pred}</li></ul>,  
+    ({ url_pred,tagname_pred,data_pred }, key) => <Lista><li>{tagname_pred}</li><li>{<FileImg src={url_pred} alt="image" key={key} />}</li><li>{data_pred}</li></Lista>,  
     []
 
   );
@@ -104,7 +102,6 @@ function Reports() {
           <Title>Relatorio de Predições:</Title>
           {reportData.map(renderObject)}
           <Line />
-          <ImageContainer>{reportData.map(renderImage)}</ImageContainer>
         </>
       ) : null}
     </Container>

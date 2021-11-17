@@ -13,7 +13,6 @@ import {
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { loginSuccess } from "../../Redux/Actions";
 
 function RegisterForm() {
   const dispatch = useDispatch();
@@ -34,11 +33,18 @@ function RegisterForm() {
       };
       await axios
         .post("http://localhost:4000/register", newUserData)
-        .then(() => {
-          dispatch(loginSuccess(newUserData));
+        .then((resp) => {
+          if(resp.data.criado){
+            window.alert('Cadastro Realizado com Sucesso! Para Acessar o Sistema Efetue o Login!');
+            history.push("/login");
+          }else{
+            window.alert('Usuário Já existe Por favor crie um novo ou recupere sua senha!');
+
+          }
+          
         })
         .finally(() => {
-          history.push("/home");
+          
         });
     },
     [dispatch, history]

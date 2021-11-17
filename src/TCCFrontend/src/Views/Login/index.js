@@ -31,8 +31,9 @@ function LoginForm() {
         password: loginPasswordRef?.current.value,
       })
       .then((userInfo) => {
-        dispatch(loginSuccess(userInfo));
-      })
+        console.log(userInfo);
+        dispatch(loginSuccess(userInfo.data));
+      }).catch((error) => {window.alert('Usuario ou senha Incorreta!')})
       .finally(() => {
         history.push("/home");
       });
