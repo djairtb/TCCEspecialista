@@ -35,12 +35,11 @@ function Reports() {
   });
 
   const fetchData = useCallback(async () => {
-    const { data } = await axios.post("http://localhost:4000/all", {
-      inicio: initialDate,
-      fim: finalDate,
-      userId: userid,
+    const { data } = await axios.post("http://localhost:4000/resultados/all", {
+      userId: 1,
     });
     if (data) {
+      console.log(data);
       setReportData(data);
     }
   }, [finalDate, initialDate, userid]);
@@ -59,12 +58,13 @@ function Reports() {
 
   const onRequestClick = useCallback(async () => {
     if (initialDate && finalDate) {
-      const { data } = await axios.post("http://localhost:4000/date", {
-        inicio: initialDate,
-        fim: finalDate,
-        userId: userid,
+      const { data } = await axios.post("http://localhost:4000/resultados/date", {
+        dataInicio: initialDate,
+        dataFim: finalDate,
+        userId: 1,
       });
       if (data) {
+        console.log(data)
         setReportData(data);
       }
     }
@@ -72,6 +72,10 @@ function Reports() {
 
   const renderImage = useCallback(
     ({ url_pred }, key) => <FileImg src={url_pred} alt="image" key={key} />,
+    []
+  );
+  const renderObject = useCallback(
+    ({ url_pred }, key) => <Title> {url_pred} </Title>,
     []
   );
 
@@ -97,19 +101,11 @@ function Reports() {
       {reportData.length ? (
         <>
           <Title>Imagens Coletadas</Title>
+          <Title>{reportData.map(renderObject)}</Title>
           <Line />
           <ImageContainer>{reportData.map(renderImage)}</ImageContainer>
         </>
       ) : null}
-      <Title>Resultado</Title>
-      <Line />
-      <DangerTitle></DangerTitle>
-      <Title>Sintomas</Title>
-      <Line />
-      <Subtitle></Subtitle>
-      <Title>Tratamento</Title>
-      <Line />
-      <Subtitle></Subtitle>
     </Container>
   );
 }

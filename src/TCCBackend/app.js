@@ -7,6 +7,7 @@ const fs = require('fs');
 const passport = require("passport");
 const session = require("express-session");
 const cors = require("cors");
+const bcrypt = require("bcryptjs")
 require("./auth")(passport);
 //Rotas
 const index = require("./routes/index");
@@ -16,7 +17,8 @@ const resultadosRoute = require("./routes/resultadoRoute");
 // ----------------------------------------------------------------
 
 let secRoutes = (req) => {
-  return req.url.startsWith("/login");
+  return [req.url.startsWith("/login"), req.url.startsWith("/register")];
+  
 };
 
 let fromHeaderOrCookie = (req) => {
@@ -67,21 +69,22 @@ app.use("/resultados", resultadosRoute);
 // Tratamento de login
 //-----------------------------------------------------------------
 app.post("/login", (req, res, next) => {
-  passport.authenticate("local", (err, user, info) => {
-    if (err) throw err;
-    console.log(user);
-    if (!user) res.send("Usuário não existe");
+  passport.authenticate("local", async(err, user, info)=> {
+
+    let login = await userRepository.getUserCredentials(req.body.username,await bcrypt.hash(req.body.password, 10))
+    if (!login) res.send("Usuário não existe");
     else {
+      console.log(req.body)
       req.logIn(user, (err) => {
         if (err) throw err;
-        let retorno = {isAuthenticated: true, ...user, token: 'eyJhbGciOiJSUzI1NiJ9.eyJ0Y2NhdXRlbnRpY2FjYW8iOiJ0cnVlIiwidG9rZW5leGVtcGxvIjoiMDEifQ.I61JfnWsC2LGpN9jpJe45PGF4JSh9wYID0PZ3BIfICUrrYfEjUnYcgrtIH2Ccph23pH-NmUpg8OSaJ27bZFzSw6BInkvxaREmMvy2-KCdXQmy4VABx-CclDIMsIoytlIDDspiqWxz-Z8hQKm-44jIpdA8doWcE_-UhsAsbivX1_Biwz0huYcLp1Bq7LnVdPO6lq6zOzUdU1QLzwFUlE1mPLF7GSEoWMfDDHPbH-s-554Ofizn6117U0pu7ivhOocyh0UWTLKEavcnD5Wsxm8Vx4sS_CgIP66YAfzLE4yEm_vry5bBJT6pWBtGOBHzdvv0nNu9ebbs8bnHj36YSCX5g'}
+        let retorno = {isAuthenticated: true, ...login, token: 'eyJhbGciOiJSUzI1NiJ9.eyJ0Y2NhdXRlbnRpY2FjYW8iOiJ0cnVlIiwidG9rZW5leGVtcGxvIjoiMDEifQ.I61JfnWsC2LGpN9jpJe45PGF4JSh9wYID0PZ3BIfICUrrYfEjUnYcgrtIH2Ccph23pH-NmUpg8OSaJ27bZFzSw6BInkvxaREmMvy2-KCdXQmy4VABx-CclDIMsIoytlIDDspiqWxz-Z8hQKm-44jIpdA8doWcE_-UhsAsbivX1_Biwz0huYcLp1Bq7LnVdPO6lq6zOzUdU1QLzwFUlE1mPLF7GSEoWMfDDHPbH-s-554Ofizn6117U0pu7ivhOocyh0UWTLKEavcnD5Wsxm8Vx4sS_CgIP66YAfzLE4yEm_vry5bBJT6pWBtGOBHzdvv0nNu9ebbs8bnHj36YSCX5g'}
         res.json(retorno);
       });
     }
   })(req, res, next);
 });
 app.post("/register", (req, res) => {
-  User.findOne({ username: req.body.username }, async (err, doc) => {
+  async (err, doc) => {
     if (err) throw err;
     if (doc) res.send("Usuário já existe");
     if (!doc) {
@@ -96,7 +99,7 @@ app.post("/register", (req, res) => {
         res.send("Erro ao criar usuário");
       }
     }
-  });
+  };
 });
 app.get("/user", (req, res) => {
   res.send(req.user);
