@@ -17,8 +17,6 @@ function RecoverPass() {
 
   const onSubmit = useCallback((e) => {
     e.preventDefault();
-    console.log(inputPasswordRef?.current.value);
-    console.log(inputPasswordTwoRef?.current.value);
   }, []);
 
   return (

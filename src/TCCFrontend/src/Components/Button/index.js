@@ -12,6 +12,7 @@ const Button = styled.button`
   width: ${injectWidth};
   border-radius: 0.4em;
   &:hover {
+    box-shadow: 20px 5px 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
   }
 `;

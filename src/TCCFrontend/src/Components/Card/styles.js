@@ -8,7 +8,6 @@ export const CardContainer = styled.div`
 
   &:hover {
     box-shadow: 20px 5px 10px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
   }
 
   @media (max-width: 600px) {

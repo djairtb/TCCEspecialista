@@ -2,7 +2,6 @@ const resultsRepository = require('../repository/resultsRepository');
 
 exports.getUserResults = async (req, res, next) => {
     let userid = req.body.userId;
-    console.log(req.body)
     let resp = await resultsRepository.getResultByUserID(userid); 
     if(resp)
         res.status(200).send(resp);

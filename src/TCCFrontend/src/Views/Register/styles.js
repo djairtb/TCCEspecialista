@@ -4,6 +4,14 @@ import loginBackground from "../../Images/login-background.jpg";
 
 export const injectColor = ({ theme }) => theme.defaultColor;
 
+export const Img = styled.img`
+  height: 30px;
+  margin-right: 10px;
+  @media (max-width: 800px) {
+    margin-left: 1em;
+  }
+`;
+
 export const Form = styled.form`
   width: 27%;
   padding: 3rem;

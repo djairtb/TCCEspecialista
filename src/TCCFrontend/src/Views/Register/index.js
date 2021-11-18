@@ -1,7 +1,9 @@
 import React, { useCallback, useRef } from "react";
 import Button from "../../Components/Button";
+import logo from "./folha1.png";
 import Input from "../../Components/Input";
 import {
+  Img,
   FormItem,
   RegisterLink,
   FormTitle,
@@ -59,14 +61,14 @@ function RegisterForm() {
     <Container>
       <Opacity />
       <Form onSubmit={onSubmit}>
-        <FormTitle>CADASTRE-SE</FormTitle>
+        <FormTitle><Img src={logo} alt="" />CADASTRE-SE</FormTitle>
         <Line />
         <FormItem>
           <Input
             width="261px"
             required
             type="text"
-            placeholder="Digite aqui seu nome"
+            placeholder="Digite aqui seu login (username)"
             ref={inputNameRef}
           />
         </FormItem>
@@ -75,7 +77,7 @@ function RegisterForm() {
             width="261px"
             required
             type="email"
-            placeholder="contato@htmlecsspro.com"
+            placeholder="seu@emailaqui.com"
             ref={inputEmailRef}
           />
         </FormItem>

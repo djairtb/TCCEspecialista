@@ -14,6 +14,7 @@ export const ImageContainer = styled.div`
   margin-bottom: 10px;
   margin-top: 25px;
   justify-content: space-around;
+  
 
   @media (max-width: 1100px) {
     height: 50%;
@@ -25,32 +26,45 @@ export const ImageContainer = styled.div`
 `;
 
 export const Line = styled.hr`
-  width: 150px;
+  width: 50px;
   margin-right: 90%;
 `;
 export const Lista = styled.ul`
-display: block;
-list-style-type: none;
-border: 1px solid black;
-margin-top: 1em;
-margin-bottom: 1 em;
-margin-left: 0;
-margin-right: 0;
-padding-left: 40px;
+  display: block;
+  list-style-type: none;
+  margin-top: 1em;
+  margin-bottom: 1 em;
+  margin-left: 1em;
+  margin-right: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: '50%',
+  float: 'left',
+  fontSize: '30px',
+  color: theme.colour.lightGrey,
+  fontStyle: 'normal',
+  fontStretch: 'normal',
+  textAlign: 'left';
+  border: 1px solid #cec3c3;
+  &:hover {
+    box-shadow: 20px 5px 10px rgba(0, 0, 0, 0.1);
+  }
 `;
+
+export const DataLabel = styled.label`
+  padding-left: 10px;
+  padding-right: 10px;
+`
 
 
 export const ContainerHeader = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: block;
+  align-items: c;
+  alingn: left;
   align-items: baseline;
-
-  @media (max-width: 600px) {
-    display: flex;
-    justify-content: space-between;
-  }
+  position: left;
 `;
 
 export const Title = styled.p`
@@ -63,16 +77,39 @@ export const Title = styled.p`
   font-size: 24px;
 `;
 
+export const LabelPred = styled.li`
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding-right: 10px;
+  flex-wrap: wrap;
+  text-color: red;
+  font-size: 18px;
+`;
 
-export const Subtitle = styled.p`
+export const BtnSaibaMais = styled.button`
+  margin-left: 15px;
+  background-color: #649760;
+  border: none;
+  cusrso:pointer;
+  color: white;
+  border-radius: 0.4em;
+  font-size: 8pt;
+  &:hover {
+    cursor: pointer;
+    box-shadow: 20px 5px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+
+`
+
+export const LabelData = styled.li`
   width: 100%;
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  margin-bottom: 10px;
-  margin-top: 25px;
   color: #636363;
-  font-size: 18px;
+  font-size: 14px;
   text-align: justify;
 `;
 
@@ -81,8 +118,6 @@ export const DangerTitle = styled.p`
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  margin-bottom: 10px;
-  margin-top: 25px;
   color: ${({ theme }) => theme.dangerColor};
 `;
 
@@ -91,7 +126,7 @@ export const FileImg = styled.img`
   //height: 100%;
   width: 250px;
   height: 250px;
-
+  border: 1px solid #cec3c3;
   @media (max-width: 1100px) {
     width: 310px;
     margin-bottom: 1em;

@@ -1,11 +1,13 @@
 import React, { useCallback, useRef } from "react";
 import Button from "../../Components/Button";
 import Input from "../../Components/Input";
+import logo from "./folha1.png";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { loginSuccess } from "../../Redux/Actions";
 import { useHistory } from "react-router-dom";
 import {
+  Img,
   FormItem,
   RegisterLink,
   FormTitle,
@@ -31,7 +33,6 @@ function LoginForm() {
         password: loginPasswordRef?.current.value,
       })
       .then((userInfo) => {
-        console.log(userInfo);
         dispatch(loginSuccess(userInfo.data));
       }).catch((error) => {window.alert('Usuario ou senha Incorreta!')})
       .finally(() => {
@@ -43,7 +44,7 @@ function LoginForm() {
     <Container>
       <Opacity />
       <Form onSubmit={onSubmit}>
-        <FormTitle>LOGIN</FormTitle>
+        <FormTitle><Img src={logo} alt="" />LOGIN</FormTitle>
         <Line />
         <FormItem>
           <Input
