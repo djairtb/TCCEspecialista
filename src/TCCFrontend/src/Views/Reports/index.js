@@ -36,7 +36,7 @@ function Reports() {
   });
 
   const fetchData = useCallback(async () => {
-    const { data } = await axios.post("http://localhost:4000/resultados/all", {
+    const { data } = await axios.post(`${process.env.REACT_APP_BACK_ORIGIN}/resultados/all`, {
       userId: userid,
     });
     if (data) {
@@ -60,7 +60,7 @@ function Reports() {
 
   const onRequestClick = useCallback(async () => {
     if (initialDate && finalDate) {
-      const { data } = await axios.post("http://localhost:4000/resultados/date", {
+      const { data } = await axios.post(`${process.env.REACT_APP_BACK_ORIGIN}/resultados/date`, {
         dataInicio: initialDate,
         dataFim: finalDate,
         userId: userid,

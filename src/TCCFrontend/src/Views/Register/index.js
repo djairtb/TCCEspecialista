@@ -32,10 +32,15 @@ function RegisterForm() {
         password: inputPasswordRef?.current.value,
       };
       await axios
-        .post("http://localhost:4000/register", newUserData)
+        .post(`${process.env.REACT_APP_BACK_ORIGIN}/register`, newUserData)
         .then((resp) => {
           if(resp.data.criado){
             window.alert('Cadastro Realizado com Sucesso! Para Acessar o Sistema Efetue o Login!');
+            axios
+            .post(`${process.env.REACT_APP_BACK_ORIGIN}/login`, {
+              username: newUserData.username,
+              password: newUserData.password,
+            });
             history.push("/login");
           }else{
             window.alert('Usuário Já existe Por favor crie um novo ou recupere sua senha!');
