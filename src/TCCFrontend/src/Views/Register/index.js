@@ -36,23 +36,22 @@ function RegisterForm() {
       await axios
         .post(`${process.env.REACT_APP_BACK_ORIGIN}/register`, newUserData)
         .then((resp) => {
-          if(resp.data.criado){
-            window.alert('Cadastro Realizado com Sucesso! Para Acessar o Sistema Efetue o Login!');
-            axios
-            .post(`${process.env.REACT_APP_BACK_ORIGIN}/login`, {
+          if (resp.data.criado) {
+            window.alert(
+              "Cadastro Realizado com Sucesso! Para Acessar o Sistema Efetue o Login!"
+            );
+            axios.post(`${process.env.REACT_APP_BACK_ORIGIN}/login`, {
               username: newUserData.username,
               password: newUserData.password,
             });
             history.push("/login");
-          }else{
-            window.alert('Usuário Já existe Por favor crie um novo ou recupere sua senha!');
-
+          } else {
+            window.alert(
+              "Usuário Já existe Por favor crie um novo ou recupere sua senha!"
+            );
           }
-          
         })
-        .finally(() => {
-          
-        });
+        .finally(() => {});
     },
     [dispatch, history]
   );
@@ -61,7 +60,10 @@ function RegisterForm() {
     <Container>
       <Opacity />
       <Form onSubmit={onSubmit}>
-        <FormTitle><Img src={logo} alt="" />CADASTRE-SE</FormTitle>
+        <FormTitle>
+          <Img src={logo} alt="" />
+          CADASTRO
+        </FormTitle>
         <Line />
         <FormItem>
           <Input

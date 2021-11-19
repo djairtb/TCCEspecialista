@@ -8,7 +8,8 @@ export const Img = styled.img`
   height: 30px;
   margin-right: 10px;
   @media (max-width: 800px) {
-    margin-left: 1em;
+    margin-bottom: 1em;
+    margin-top: -7px;
   }
 `;
 
@@ -36,6 +37,7 @@ export const FormTitle = styled.h1`
 
   @media (max-width: 900px) {
     text-align: center;
+    font-size: 22px;
   }
 `;
 
@@ -46,6 +48,7 @@ export const RegisterLink = styled(Link)`
   @media (max-width: 900px) {
     font-size: 1.3em;
     text-align: center;
+    font-size: 17px;
   }
 `;
 

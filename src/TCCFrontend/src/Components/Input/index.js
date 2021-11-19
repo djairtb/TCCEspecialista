@@ -12,6 +12,7 @@ const Input = styled.input`
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   border-radius: 0.5em;
   margin-top: 7px;
+  margin-bottom: 1em;
 
   @media (max-width: 500px) {
     width: 8em;

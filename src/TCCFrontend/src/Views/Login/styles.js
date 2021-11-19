@@ -8,7 +8,7 @@ export const Img = styled.img`
   height: 30px;
   margin-right: 10px;
   @media (max-width: 800px) {
-    margin-left: 1em;
+    margin-left: 0em;
   }
 `;
 export const Form = styled.form`

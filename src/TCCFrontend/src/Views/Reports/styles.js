@@ -69,12 +69,12 @@ export const ContainerHeader = styled.div`
   align-items: baseline;
   position: left;
 
-  @media (max-width: 400px) {
+  @media (max-width: 500px) {
     display: block;
     width: 17em;
   }
-  @media (min-width: 450px) {
-    display: block;
+  @media (min-width: 500px) and (max-width: 900px) {
+    display: grid;
     width: 17em;
   }
 `;
