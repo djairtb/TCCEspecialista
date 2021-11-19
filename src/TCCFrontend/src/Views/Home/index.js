@@ -7,7 +7,6 @@ import ferrugem_capa from "../../Images/ferrugem-capa.jpg";
 import cercospora_capa from "../../Images/cercospora-capa.jpg";
 import mancha_capa from "../../Images/mancha-capa.jpg";
 import folhaBg from "../../Images/login-background.jpg";
-import foto_home_capa from "../../Images/foto_home_capa.jpg";
 import foto1_home_capa from "../../Images/foto1_home_capa.jpg";
 import foto2_home_capa from "../../Images/foto2_home_capa.jpg";
 import foto4_home_capa from "../../Images/foto4_home_capa.jpg";
@@ -29,8 +28,6 @@ import {
 } from "./styles";
 
 function Home() {
-  const FIVE_SECONDS = 5000;
-
   const Imagems = [
     homeBg,
     folhaBg,
@@ -60,13 +57,16 @@ function Home() {
      `,
     image: mancha_capa,
   };
+
+  const FIVE_SECONDS = 5000;
+
   const [index, setIndex] = useState(0);
 
   const intervalRef = useRef();
 
   const updateImage = useCallback(() => {
-    setIndex((index + 1) % Imagems.length);
-  }, [index]);
+    setIndex((prevState) => (prevState + 1) % Imagems.length);
+  }, []);
 
   useEffect(() => {
     intervalRef.current = setInterval(updateImage, FIVE_SECONDS);

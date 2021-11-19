@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback, useEffect, useRef } from "react";
 import image1 from "../../Images/mancha1.JPG";
 import image2 from "../../Images/mancha2.jpg";
 import image3 from "../../Images/mancha3.png";
@@ -14,14 +14,10 @@ import {
   Header,
   IconClickable,
   CircleContainer,
-  Imagems,
-  FIVE_SECONDS,
   TitleInf,
 } from "./styles";
 
 function InfoMancha() {
-  const FIVE_SECONDS = 5000;
-
   const INFOS = {
     InfoDiasese:
       "Antigamente a mancha aureolada era mais comum em locais frios, como Paraná e São Paulo, mas ela vem se espalhando e hoje em dia não se encontra mais apenas em locais com temperaturas menores (Rehagro). É mais perigosa para lavouras novas (com pelo menos 4 anos) mas as lavouras mais antigas também podem ser acometidas pela bactéria. Estudos novos com base em observações realizadas em campo, mostram que as plantas mais fracas e com diversas deficiências nutricionais são mais propícias a serem atacadas por essa bactéria.",
@@ -35,27 +31,34 @@ function InfoMancha() {
 
   const { InfoDiasese, InformSymp, InfoTreatm } = INFOS;
 
+  const FIVE_SECONDS = 5000;
+
   const [index, setIndex] = useState(0);
 
+  const intervalRef = useRef();
+
   const updateImage = useCallback(() => {
-    setIndex((index + 1) % Imagems.length);
-  }, [index]);
+    setIndex((prevState) => (prevState + 1) % Imagems.length);
+  }, []);
 
   useEffect(() => {
-    let intervalId;
-    intervalId = setInterval(updateImage, FIVE_SECONDS);
-    return () => clearInterval(intervalId);
+    intervalRef.current = setInterval(updateImage, FIVE_SECONDS);
+    return () => clearInterval(intervalRef.current);
   }, []);
 
   const onLeftClick = useCallback(() => {
+    clearInterval(intervalRef.current);
     if (index !== 0) {
       setIndex(index - 1);
     }
   }, [index]);
 
   const onRightClick = useCallback(() => {
-    if (index !== Imagems.length - 1) {
+    clearInterval(intervalRef.current);
+    if (index < Imagems.length - 1) {
       setIndex(index + 1);
+    } else if (index === Imagems.length - 1) {
+      setIndex(0);
     }
   }, [index]);
 

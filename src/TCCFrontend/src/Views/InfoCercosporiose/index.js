@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback, useEffect, useRef } from "react";
 import image1 from "../../Images/cercos1.png";
 import image2 from "../../Images/cercos2.JPG";
 import image3 from "../../Images/cercos3.JPG";
@@ -9,7 +9,6 @@ import image6 from "../../Images/cercos6.jpg";
 import {
   Title,
   Subtitle,
-  DangerTitle,
   Line,
   Container,
   BottomController,
@@ -19,8 +18,6 @@ import {
   HeaderItem,
   Header,
   TitleInf,
-  FIVE_SECONDS,
-  INFOS,
 } from "./styles";
 
 function InfoCercosporiose() {
@@ -33,33 +30,38 @@ function InfoCercosporiose() {
       "A mais simples forma de controlar a doença como citada anteriormente, é evitar que a planta sofra com desequilíbrios nutricionais. Por isso, o melhor seria um planejamento correto de adubações e o acompanhamento das folhas do café. Com relação ao plantio, considera-se evitar plantios tardios e realizar uma preparação cuidadosa do solo, para que o solo não afete a absorção de nutrientes. Além disso, há estudos que indicam a utilização de silício para controlar o fungo (Juliatti, 2001). Há muitas outras práticas, como utilizar semente certificada e tratada com determinados fungicidas, evitar cultivar o café próximo a área que se cultivem acelga, seguir o espaçamento adequado para se evitar o plantio adensado, irrigar conforme a necessidade e sempre que possível cultivar em local drenado, para que não haja o acúmulo de água na lavoura. Quando utilizar canteiro, elevar no mínimo dez centímetros para diminuir a umidade na superfície do solo (UFLA, Lavras-MG, 2003)",
   };
 
-  const FIVE_SECONDS = 5000;
-
   const Imagems = [image1, image2, image3, image4, image5, image6];
 
   const { InfoDiasese, InformSymp, InfoTreatm } = INFOS;
 
+  const FIVE_SECONDS = 5000;
+
   const [index, setIndex] = useState(0);
 
+  const intervalRef = useRef();
+
   const updateImage = useCallback(() => {
-    setIndex((index + 1) % Imagems.length);
-  }, [index]);
+    setIndex((prevState) => (prevState + 1) % Imagems.length);
+  }, []);
 
   useEffect(() => {
-    let intervalId;
-    intervalId = setInterval(updateImage, FIVE_SECONDS);
-    return () => clearInterval(intervalId);
+    intervalRef.current = setInterval(updateImage, FIVE_SECONDS);
+    return () => clearInterval(intervalRef.current);
   }, []);
 
   const onLeftClick = useCallback(() => {
+    clearInterval(intervalRef.current);
     if (index !== 0) {
       setIndex(index - 1);
     }
   }, [index]);
 
   const onRightClick = useCallback(() => {
-    if (index !== Imagems.length - 1) {
+    clearInterval(intervalRef.current);
+    if (index < Imagems.length - 1) {
       setIndex(index + 1);
+    } else if (index === Imagems.length - 1) {
+      setIndex(0);
     }
   }, [index]);
 

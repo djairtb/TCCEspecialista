@@ -14,7 +14,6 @@ export const ImageContainer = styled.div`
   margin-bottom: 10px;
   margin-top: 25px;
   justify-content: space-around;
-  
 
   @media (max-width: 1100px) {
     height: 50%;
@@ -51,13 +50,17 @@ export const Lista = styled.ul`
   &:hover {
     box-shadow: 20px 5px 10px rgba(0, 0, 0, 0.1);
   }
+
+  @media (max-width: 500px) {
+    margin-left: -2em;
+  }
+
 `;
 
 export const DataLabel = styled.label`
   padding-left: 10px;
   padding-right: 10px;
-`
-
+`;
 
 export const ContainerHeader = styled.div`
   display: block;
@@ -65,6 +68,15 @@ export const ContainerHeader = styled.div`
   alingn: left;
   align-items: baseline;
   position: left;
+
+  @media (max-width: 400px) {
+    display: block;
+    width: 17em;
+  }
+  @media (min-width: 450px) {
+    display: block;
+    width: 17em;
+  }
 `;
 
 export const Title = styled.p`
@@ -91,7 +103,7 @@ export const BtnSaibaMais = styled.button`
   margin-left: 15px;
   background-color: #649760;
   border: none;
-  cusrso:pointer;
+  cusrso: pointer;
   color: white;
   border-radius: 0.4em;
   font-size: 8pt;
@@ -99,9 +111,7 @@ export const BtnSaibaMais = styled.button`
     cursor: pointer;
     box-shadow: 20px 5px 10px rgba(0, 0, 0, 0.1);
   }
-  
-
-`
+`;
 
 export const LabelData = styled.li`
   width: 100%;
@@ -131,5 +141,9 @@ export const FileImg = styled.img`
     width: 310px;
     margin-bottom: 1em;
     padding: 1em;
+  }
+
+  @media (max-width: 325px) {
+    width: 260px;
   }
 `;

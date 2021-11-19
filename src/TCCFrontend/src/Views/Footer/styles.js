@@ -39,11 +39,12 @@ export const Text = styled.div`
   font-size: 15px;
   color: white;
 
-  @media (max-width: 900px) {
-    font-size: 14px;
+  @media (max-width: 500px) {
+    font-size: 15px;
     margin-top: -1em;
     float: left;
     text-align: left;
+    padding: 0.5em;
   }
 `;
 
@@ -64,5 +65,15 @@ export const Icons = styled.div`
   @media (max-width: 800px) {
     width: 20%;
     margin-bottom: 1em;
+  }
+`;
+
+export const IconLink = styled.a`
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+
+  @media (max-width: 400px) {
+    align-items: center;
   }
 `;

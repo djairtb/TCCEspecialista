@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback, useEffect, useRef } from "react";
 import image1 from "../../Images/ferrugem1.jpg";
 import image2 from "../../Images/ferrugem2.jpg";
 import image3 from "../../Images/ferrugem3.jpg";
@@ -31,33 +31,39 @@ function InfoFerrugem() {
     InfoTreatm:
       "Medidas para controlar o fungo devem ser aplicadas o mais rápido possível, em caso de infestação, pois tais medidas podem impedir os danos que a doença pode trazer para a safra. Normalmente é utilizado fungicidas a base de cobre, porém há duas categorias de fungicidas para auxiliar no caso de Ferrugem, aquele que protege e faz parte do controle preventivo, auxiliando no combate a penetração do fungo, conhecido como Fungicidas Protetores (Cúpricos – Oxicloreto de cobre, hidróxido de cobre do primeiro grupo) e os fungicidas sistêmicos que são absorvidos no local em que foi aplicado (Foliar: triazol, estrobilurina, Solo (fungicida + inseticida)).",
   };
-  const FIVE_SECONDS = 5000;
 
   const Imagems = [image1, image2, image3, image4, image5, image6, image7];
 
   const { InfoDiasese, InformSymp, InfoTreatm } = INFOS;
 
+  const FIVE_SECONDS = 5000;
+
   const [index, setIndex] = useState(0);
 
+  const intervalRef = useRef();
+
   const updateImage = useCallback(() => {
-    setIndex((index + 1) % Imagems.length);
-  }, [index]);
+    setIndex((prevState) => (prevState + 1) % Imagems.length);
+  }, []);
 
   useEffect(() => {
-    let intervalId;
-    intervalId = setInterval(updateImage, FIVE_SECONDS);
-    return () => clearInterval(intervalId);
+    intervalRef.current = setInterval(updateImage, FIVE_SECONDS);
+    return () => clearInterval(intervalRef.current);
   }, []);
 
   const onLeftClick = useCallback(() => {
+    clearInterval(intervalRef.current);
     if (index !== 0) {
       setIndex(index - 1);
     }
   }, [index]);
 
   const onRightClick = useCallback(() => {
-    if (index !== Imagems.length - 1) {
+    clearInterval(intervalRef.current);
+    if (index < Imagems.length - 1) {
       setIndex(index + 1);
+    } else if (index === Imagems.length - 1) {
+      setIndex(0);
     }
   }, [index]);
 

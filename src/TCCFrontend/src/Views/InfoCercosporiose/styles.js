@@ -122,16 +122,6 @@ export const Subtitle = styled.p`
   color: #636363;
 `;
 
-export const DangerTitle = styled.p`
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  margin-bottom: 10px;
-  margin-top: 25px;
-  text-align: justify;
-`;
-
 export const HeaderItem = styled.div`
   display: flex;
   flex-wrap: wrap;

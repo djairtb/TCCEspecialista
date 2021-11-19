@@ -10,6 +10,7 @@ export const StyledNavbar = styled.div`
   filter: brightness(80%);
 
   @media (max-width: 800px) {
+    text-align: left;
   }
 `;
 

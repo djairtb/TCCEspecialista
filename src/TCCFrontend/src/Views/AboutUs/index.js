@@ -23,15 +23,14 @@ import {
   Text,
   Title,
   ContainerImages,
-  FileImg,
 } from "./styles";
 
 function AboutUs() {
   const INFOS = {
     missao:
-      "Oferecer uma tecnologia inovadora e de alta eficiência para o monitoramento e identificação de doeças no cafeeiro, gerando valor ao cliente, diminuindo o impacto ambiental e buscando excelência.",
+      "Oferecer uma tecnologia inovadora e de alta eficiência para o monitoramento e identificação de doenças no cafeeiro, gerando valor ao cliente, diminuindo o impacto ambiental e buscando excelência.",
     visao:
-      "Ser refêrencia atraves da nossa tecnologia e boa performance para que as ONG´S auxiliem os agricultores no combate a doenças que possam aparecer nas folhas do café.",
+      "Ser referência através da nossa tecnologia e boa performance para que as ONG´S auxiliem os agricultores no combate a doenças que possam surgir nas folhas do café.",
     quemSomos:
       "Somos uma equipe focada em entregar a melhor experiência para o usuário final. Queremos ajudar as ONG's e os pequenos agricultores a monitorarem suas plantações. Este é um projeto iniciado no ano de 2021 para um Trabalho de conclusão de curso(TCC), mas que se transformará em algo muito maior, pois nos empenhamos diariamente para que um dia possamos fazer diferença no mundo.",
   };
