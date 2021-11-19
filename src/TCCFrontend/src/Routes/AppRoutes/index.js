@@ -5,7 +5,7 @@ import Footer from "../../Views/Footer";
 import NavBar from "../../Views/Navbar";
 
 const AppRoutes = ({ component: Component, ...rest }) => {
-  /*const history = useHistory();
+  const history = useHistory();
   const isAuthenticated = useSelector(({ login }) => {
     return login.isAuthenticated;
   });
@@ -16,7 +16,7 @@ const AppRoutes = ({ component: Component, ...rest }) => {
     }
     history.push("/login");
   }, [isAuthenticated]);
-*/
+
   return (
     <Route
       {...rest}
