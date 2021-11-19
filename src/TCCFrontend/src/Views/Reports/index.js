@@ -77,7 +77,7 @@ function Reports() {
   }, [initialDate, finalDate, userid]);
 
   function saibaMais(parameter, event) {
-    if (parameter == "Indefinido")
+    if (parameter == "Doença não identificada")
       window.alert("Nehuma praga do café detectada na imagem!!.");
     else if (parameter == "Ferrugem") history.push("/infoferrugem");
     else if (parameter == "Cercosporiose") history.push("/infocercosporiose");
