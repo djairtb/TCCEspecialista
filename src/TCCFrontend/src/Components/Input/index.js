@@ -14,8 +14,12 @@ const Input = styled.input`
   margin-top: 7px;
   margin-bottom: 1em;
 
-  @media (max-width: 500px) {
+  @media (min-width: 300px) and (max-width: 400px) {
     width: 8em;
+  }
+
+  @media (max-width: 200px) {
+    width: 20em;
   }
 `;
 

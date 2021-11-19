@@ -50,6 +50,7 @@ margin: auto;
   justify-content: space-around;
   margin-top: 2rem;
   flex-wrap wrap;
+ 
 `;
 
 export const BottomController = styled.div`

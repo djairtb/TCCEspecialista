@@ -5,6 +5,8 @@ export const Container = styled.div`
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 `;
 
 export const ImageContainer = styled.div`
@@ -25,8 +27,13 @@ export const ImageContainer = styled.div`
 `;
 
 export const Line = styled.hr`
-  width: 50px;
+  width: 100%;
   margin-right: 90%;
+
+  @media (max-width: 500px) {
+    width: 100%;
+    margin-top: 0.6em;
+  }
 `;
 export const Lista = styled.ul`
   display: block;
@@ -35,7 +42,7 @@ export const Lista = styled.ul`
   margin-bottom: 1 em;
   margin-left: 1em;
   margin-right: 0;
-  padding-left: 10px;
+  //padding-left: 10px;
   padding-right: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -52,7 +59,7 @@ export const Lista = styled.ul`
   }
 
   @media (max-width: 500px) {
-    margin-left: -2em;
+    margin-left: -3em;
   }
 
 `;
@@ -68,6 +75,7 @@ export const ContainerHeader = styled.div`
   alingn: left;
   align-items: baseline;
   position: left;
+  font-size: 15px;
 
   @media (max-width: 500px) {
     display: block;
@@ -135,15 +143,16 @@ export const FileImg = styled.img`
   //width: 20%;
   //height: 100%;
   width: 250px;
-  height: 250px;
+  height: 220px;
   border: 1px solid #cec3c3;
+  margin-left: -2em;
   @media (max-width: 1100px) {
-    width: 310px;
     margin-bottom: 1em;
     padding: 1em;
   }
 
-  @media (max-width: 325px) {
-    width: 260px;
+  @media (max-width: 400px) {
+    width: 267px;
+    margin-left: -1em;
   }
 `;

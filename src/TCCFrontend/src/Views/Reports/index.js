@@ -14,6 +14,7 @@ import {
   LabelPred,
   LabelData,
   BtnSaibaMais,
+  Line,
 } from "./styles";
 
 const INITIAL_DATE = new Date();
@@ -116,7 +117,7 @@ function Reports() {
     <Container>
       <ContainerHeader>
         <p>Filtrar por data:</p>
-        <hr />
+        <Line />
         <DataLabel>Data Inicio: </DataLabel>
         <Input
           id="Data Inicio"
@@ -136,7 +137,7 @@ function Reports() {
         />
         <DataLabel></DataLabel>
         <Button onClick={onRequestClick}>Filtrar</Button>
-        <hr />
+        <Line />
       </ContainerHeader>
 
       {reportData.length ? (
