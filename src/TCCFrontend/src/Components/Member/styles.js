@@ -15,13 +15,24 @@ export const MemberContainer = styled.div`
     cursor: pointer;
   }
 
-  @media (max-width: 1300px) {
+  
+  @media (max-width: 399px) {
     display: flex;
     flex-wrap wrap;
     margin-bottom: 4em;
     margin-left: 3em;
     border: 1px solid black;
+      
+  }
 
+  @media (min-width: 405px) and (max-width: 1300px) {
+    display: flex;
+    flex-wrap wrap;
+    //margin-bottom: 4em;
+    //margin-left: 3em;
+    margin-bottom: 1em;
+    margin-left: 0.6em;
+    //border: 1px solid black;
   }
 
 `;

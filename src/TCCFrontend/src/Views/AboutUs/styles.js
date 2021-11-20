@@ -81,8 +81,15 @@ export const ContainerWhoAreUs = styled.div`
     margin-top: -3em;
   }
 
-  @media (min-width: 200px) and (max-width: 1299px) {
-    height: 220%;
+  @media (min-width: 200px) and (max-width: 600px) {
+    height: 185%;
+  }
+
+  @media (min-width: 601px) and (max-width: 1400px) {
+    height: 56%;
+  }
+  @media (min-width: 1351px) and (max-width: 1600px) {
+    height: 35%;
   }
 `;
 
@@ -136,29 +143,31 @@ export const ContainerImages = styled.div`
   flex-wrap wrap;
   flex-direction: inherit;
   margin-left: -2em;
+  align-content: baseline;
 
 
-  @media (max-width: 800px) {
-    height: 80%;
+ 
+  @media (min-width: 1200px) and (max-width: 1100px) {
+    height: 68%;
     justify-content: space-around;
     flex-wrap wrap;
     margin-left: -3em;
     flex-direction: column;
-    margin-bottom: 2em;
+    margin-top: -2em;
     align-content: center;
+
   }
 
-  @media (min-width: 800px) and (max-width: 1300px) {
-    height: 80%;
+  @media (min-width: 1601px)  and (max-width: 1500px) {
+    height: 20%;
     justify-content: space-around;
-    flex-wrap wrap;
+    flex-wrap wrap-reverse;
     margin-left: -3em;
     flex-direction: column;
-    margin-top: -3em;
+    margin-top: -2em;
     align-content: center;
+
   }
-
-
 
     
 `;
