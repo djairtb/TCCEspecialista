@@ -19,7 +19,9 @@ function NavBar() {
 
   return (
     <StyledNavbar>
-      <Img src={logo} alt="" />
+      <NavLink to="/home">
+        <Img src={logo} alt="" />
+      </NavLink>
       <div>
         <NavLink to="/home">
           <i className="fa fa-home" aria-hidden="true"></i>

@@ -106,11 +106,42 @@ export const Subtitle = styled.p`
   @media (max-width: 1900px) {
     text-align: start;
     margin-bottom: -1em;
+    height: 5em;
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 450px) {
     text-align: center;
     font-size: 15px;
     margin-bottom: -1em;
+    height: 9em;
+    margin: -1em;
+    margin-top: auto;
+  }
+
+  @media (min-width: 451px) and (max-width: 700px) {
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: -1em;
+    height: 7em;
+    margin: -1em;
+    margin-top: auto;
+  }
+
+  @media (min-width: 701px) and (max-width: 1000px) {
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: -1em;
+    height: 5em;
+    margin: -1em;
+    margin-top: auto;
+  }
+
+  @media (min-width: 1001px) and (max-width: 1400px) {
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: -1em;
+    height: 4em;
+    margin: -1em;
+    margin-top: auto;
   }
 `;

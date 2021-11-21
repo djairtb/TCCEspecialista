@@ -28,7 +28,7 @@ function ForgotPass() {
         <Line />
         <FormItem>
           <Subtitle>
-            Digite seu e-mail abaixo, um link será enviado para redefinição de
+            Digite seu e-mail abaixo. Um link será enviado para redefinição de
             senha. Siga as instruções.
           </Subtitle>
         </FormItem>

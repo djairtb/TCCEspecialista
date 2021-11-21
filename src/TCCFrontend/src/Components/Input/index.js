@@ -14,7 +14,7 @@ const Input = styled.input`
   margin-top: 7px;
   margin-bottom: 1em;
 
-  @media (min-width: 300px) and (max-width: 400px) {
+  @media (min-width: 300px) and (max-width: 540px) {
     width: 8em;
   }
 
