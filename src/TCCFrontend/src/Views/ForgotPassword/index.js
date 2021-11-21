@@ -44,7 +44,7 @@ function ForgotPass() {
         </FormItem>
 
         <FormItem>
-          <Button width="261px" type="submit">
+          <Button width="261px" >
             Enviar Link
           </Button>
         </FormItem>

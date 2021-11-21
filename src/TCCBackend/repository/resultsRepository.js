@@ -15,9 +15,8 @@ let getResultByUserID = async (id) =>{
 }
 let getResultByDateRange = async (id,dateStart,dateEnd) =>{
     let result;
-
     try {
-        await db.pool.query("SELECT tagname_pred,data_pred,user_id,url_pred  from public.resultados  WHERE data_pred >= $1 AND data_pred <=  $2 AND user_id = $3 ORDER BY data_pred DESC",[dateStart,dateEnd,id]).then(res =>{
+        await db.pool.query("SELECT tagname_pred,data_pred,user_id,url_pred  from public.resultados  WHERE data_pred >= $1 AND data_pred - interval'3 hours' <=  $2 AND user_id = $3 ORDER BY data_pred DESC;",[dateStart,dateEnd,id]).then(res =>{
             result = res.rows
         })
     } catch (error) {
