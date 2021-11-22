@@ -1,4 +1,3 @@
-const { futimesSync } = require('fs');
 const resultsRepository = require('../repository/resultsRepository');
 
 exports.getUserResults = async (req, res, next) => {

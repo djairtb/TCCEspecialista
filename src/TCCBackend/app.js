@@ -11,6 +11,7 @@ const bcrypt = require("bcryptjs")
 //Rotas
 const index = require("./routes/index");
 const resultadosRoute = require("./routes/resultadoRoute");
+const userRoute = require("./routes/userRoute");
 
 //Middlewares
 // ----------------------------------------------------------------
@@ -67,6 +68,7 @@ app.use(passport.session());
 
 app.use("/", index);
 app.use("/resultados", resultadosRoute);
+app.use("/forgotten", userRoute);
 // ----------------------------------------------------------------
 
 // Tratamento de login

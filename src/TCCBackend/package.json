@@ -15,6 +15,7 @@
     "express-jwt": "^6.1.0",
     "express-session": "^1.17.2",
     "fs": "0.0.1-security",
+    "nodemailer": "^6.7.1",
     "passport": "^0.5.0",
     "passport-local": "^1.0.0",
     "pg": "^8.7.1"

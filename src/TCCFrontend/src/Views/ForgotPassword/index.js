@@ -1,6 +1,8 @@
 import React, { useCallback, useRef } from "react";
 import Button from "../../Components/Button";
 import Input from "../../Components/Input";
+import { useHistory } from "react-router-dom";
+import axios from "axios";
 import {
   FormItem,
   RegisterLink,
@@ -13,17 +15,30 @@ import {
 } from "./styles";
 
 function ForgotPass() {
+
+  const history = useHistory();
   const inputEmailRef = useRef();
 
-  const onSubmit = useCallback((e) => {
+  const onSubmit = useCallback(async(e) => {
     e.preventDefault();
-    console.log(inputEmailRef?.current.value);
+    const changeUserData = {
+      email: inputEmailRef?.current.value,
+    };
+    await axios
+        .post(`${process.env.REACT_APP_BACK_ORIGIN}/forgotten/send`, changeUserData)
+        .then((resp) => {
+            window.alert(
+              "Solicitação enviada, acesse o link em seu email para recuperar sua senha!"
+            );
+            history.push("/");
+        })
+        .finally(() => {});
   }, []);
 
   return (
     <Container>
       <Opacity />
-      <Form>
+      <Form onSubmit={onSubmit}>
         <FormTitle>ESQUECEU A SENHA?</FormTitle>
         <Line />
         <FormItem>
@@ -44,7 +59,7 @@ function ForgotPass() {
         </FormItem>
 
         <FormItem>
-          <Button width="261px" >
+          <Button width="261px" type="submit">
             Enviar Link
           </Button>
         </FormItem>

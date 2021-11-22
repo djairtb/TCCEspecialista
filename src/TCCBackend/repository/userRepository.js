@@ -40,4 +40,16 @@ let checkUserExists = async (login,email) => {
     
 }
 
-module.exports = {userRegister,getUserCredentials,checkUserExists}
+let changeForgottenPassword = async (userid,passwordHash) => {
+    try {
+        await db.pool.query('UPDATE public.users SET pass_hash = $1 WHERE id = $2 returning id',[passwordHash,userid]).then(res =>{
+            result = res.rows
+        })
+        return result
+    } catch (error) {
+        console.log(error)
+        return null;
+    }
+}
+
+module.exports = {userRegister,getUserCredentials,checkUserExists,changeForgottenPassword}
