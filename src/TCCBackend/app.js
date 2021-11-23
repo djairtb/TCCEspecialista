@@ -17,7 +17,7 @@ const userRoute = require("./routes/userRoute");
 // ----------------------------------------------------------------
 
 let secRoutes = (req) => {
-  return [req.url.startsWith("/login"), req.url.startsWith("/register")];
+  return req.url.startsWith("/login"), req.url.startsWith("/register");
   
 };
 
